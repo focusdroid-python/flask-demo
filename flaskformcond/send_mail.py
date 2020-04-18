@@ -20,7 +20,7 @@ mail = Mail(app)
 
 @app.route('/')
 def index():
-    # sender　发送方，　recipients接收方列表
+    # sender　发送方，　recipients接收方列表 
     msg = Message('This is test', sender='840254112@qq.com', recipients=['focusdroid@163.com'])
 
     # 邮件内容

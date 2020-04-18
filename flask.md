@@ -507,6 +507,24 @@ pip install flask-mail
 
 
 ```
+## 蓝图的使用
+```
+1.创建蓝图对象
+# Blueprint(必须制定两个参数，admin表示蓝图的名称，__name__表示蓝图所在的模块)
+admin = Blueprint('admin', __name__)
+
+２．　注册蓝图对象
+@admin.route('/')
+def admin_index():
+    return 'admin index page'
+３．在程序实例中注册该蓝图
+app.register_blueprint(admin, url_prefix='/admin')
+
+# 文件目录
+具体使用 /page/main.py
+具体使用 /page/orders.py
+
+```
 
 
 
