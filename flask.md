@@ -525,6 +525,54 @@ app.register_blueprint(admin, url_prefix='/admin')
 具体使用 /page/orders.py
 
 ```
+## 测试中断言的使用方法
+```
+a = [1,2,3,4,5,6]
+b = 1
+
+assert()
+```
+## 安装python服务器
+```
+pip instal gunicorn
+
+gunicorn -w 4 -b 127.0.0.1:5000 -D --access-logfile ./logs/log main:app
+```
+## flask服务器部署
+```
+-D隐藏启动，可以使用 ps -aux | grep gunicorn 查看
+gunicorn -w 4 -b 当前公网ip:5000 -D --access-logfile ./logs/log main:app
+gunicorn -w 4 -b 当前公网ip:500１ --access-logfile ./logs/log main:app
+启动两个端口的任务
+
+### 1. 安装ngxin
+sudo pat-get install nginx
+### 2. Nginx配置
+默认安装到/usr/local/nginx目录，进入目录
+启动nginx
+＃　启动
+sudo sbin/nginx
+# 查看　
+ps -aux | grep ngxin
+# 停止
+sudo sbin/nginx -s stop
+
+### 打开　/usr/local/nginx/conf/nginx.conf文件 16.04
+### /etc/nginx/nginx.conf   18.04
+server {
+    ＃　监听80端口
+    listen 80:
+    # 本机
+    server_name localhost;
+    # 默认请求的url
+    location / {
+        # 请求转发到gunicorn服务器
+        proxy_pass http://127.0.0.1:5001
+        # 设置请求头，　并将头信息传递给服务器端
+        proxy_set_header Host $host;
+    }
+}
+```
 
 
 
