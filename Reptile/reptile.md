@@ -136,9 +136,86 @@ print(res.status_code)
 print(res.request.url)
 
 ```
+### 发送post请求
+```
+用法: resquests.post(url, data, headers)
+```
+### 使用代理
+```
+用法: requests.get("https://www.google.com", proxies=proxies，　headers=headers, times=0)
+proxies = {
+    "http":"http://67.228.221.221",
+    "https":"https://67.228.221.221"
+}
+# 为什么爬虫需要使用代理
+１．让服务器以为不是同一个客户端在请求
+２．防止我们的真实地址被泄露，防止被追究
 
+- 准备一堆ip地址，组成ip池，随机选择一个ip来使用
+- 如何选择代理ip，让使用次数较少的ip地址有更大的可能性被用到
+    - {"ip":"ip", "times":"0"}
+    - [{},{},{},{}],对这个ip的列表进行排序，按照使用次数进行排序
+    - 选择使用次数较少的10个，从中选择一个
+- 检查ip可用性
+   - 可以使用requests添加超时参数，判断ip地址的质量
+   - 
+```
+### request中的cookie session区别
+```
+cookie数据存放在客户的浏览器上，session数据放在服务骑上
+cookie
+携带一堆cookie进行请求，把cookie组成cookie池
 
+```
 
+### 请求登录之后的网站的思路
+```
+实例化session
+先使用session发送请求，登陆网站，把cookie保存在session中
+在使用session请求登录之后才能访问的网站，session能够使用自动的携带登陆成功时保存在其中的cookie，进行请求
+
+```
+### 不发送post请求，使用cookie获取登录后的页面
+```
+- cookie过期时间很长的网站
+- 在cookie过期之前拿到所有数据
+- 配合其他程序一起使用，其他程序专门获取cookie
+```
+### 字典推导式，列表推导式
+```python
+cookies = "anonymid=k9s0c65y2om8pj; depovince=GW; _r01_=1; JSESSIONID=abcNfoYyDySYUa1KYbEhx; ick_login=1f120d53-226f-48b0-85aa-6fa23c2aea8f; taihe_bi_sdk_uid=dc98311ffc7de226cb1f79afdd705b6f; taihe_bi_sdk_session=91d2d67ef0387cdfd5c5b98a2adb89de; jebe_key=bf8a72df-0519-4da7-b1df-362082dfd8d0%7C18333670b0ee1f54e006adc80fdd7f23%7C1588568014097%7C1%7C1588568014407; ick=115383c1-78f2-4270-9a54-2136b5ae3d95; wp_fold=0; XNESSESSIONID=3ab59dd30b97; WebOnLineNotice_974361808=1; first_login_flag=1; ln_uact=15701229789; ln_hurl=http://head.xiaonei.com/photos/0/0/men_main.gif; jebe_key=bf8a72df-0519-4da7-b1df-362082dfd8d0%7C92e70cb2bde7172939cddc8f15fdd3b4%7C1588570052591%7C1%7C1588570052691; jebecookies=fbd2ce92-afdd-406f-aa64-8c77424f55e6|||||; _de=D5FD513C20B9124F1FF9E00605E6865D; p=f4322106a294e3621012a0b8624141118; t=1c4aeb703428602f1361c3618e467c7e8; societyguester=1c4aeb703428602f1361c3618e467c7e8; id=974361808; xnsid=21d68637; loginfrom=syshome"
+
+cookies = {i.split("=")[0]:i.split("=")[1] for i in cookies.split("; ")}
+print(cookies)
+
+[self.url_temp.format(i * 50) for i in range(1000) ]
+```
+
+### 获取登录后的页面的三种方式
+ - 实例化session,使用session发送post请求，在使用其他获取登录后的页面
+ - headers中添加cookie键，值为cookie字符串
+ - 在请求方法中添加cookies参数，接受字典形式的cookie，字典形式的cookie中的键是cookie的name对应的值，值是cookie中value对应的值
+
+### 
+- requests的底层实现就是urllib
+- requests在pytnhon2和python3中通用，方法完全一样
+- requests简单易用
+- requests能够自动帮助我们解压(gzip等)网页内容
+- (requests中文文档)["https://requests.readthedocs.io/zh_CN/latest"]
+
+### requestsw中解决编解码的问题方法
+- response.content.decode() 类型: bytes
+- response.content.decode("gbk")
+- response.text  设置response.eccoding = "utf-8" 类型: str
+
+### requests保存图片
+```
+with open("a.gif", "wb") as f:
+    f.write(response.content)
+
+其中　wb表示二进制文件
+    　w 表示文本文件（字符串文件）
+```
 
 
 
