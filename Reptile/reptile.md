@@ -216,7 +216,14 @@ with open("a.gif", "wb") as f:
 其中　wb表示二进制文件
     　w 表示文本文件（字符串文件）
 ```
+### 寻找登录的post地址
+- 在from表单中寻找action对应的url地址
+    -　post的数据是input标签中的name的值作为键,真正的用户名和密码作为值的字典，post的url地址就是action对应的url地址
+    
+- 抓包
 
+### 寻找js
+- 
 
 
 
