@@ -213,7 +213,7 @@ print(cookies)
 with open("a.gif", "wb") as f:
     f.write(response.content)
 
-其中　wb表示二进制文件
+其中　wb表示二进制文件  
     　w 表示文本文件（字符串文件）
 ```
 ### 寻找登录的post地址
