@@ -66,5 +66,8 @@ def create_app(config_name):
     from ihome import api_1_0
     app.register_blueprint(api_1_0.api, url_prefix="/api/v1.0")
 
+    # 注册提供静态文件的蓝图
+    # from ihome import web_html
+    # app.register_blueprint(web_html.html)
 
     return app
