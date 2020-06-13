@@ -8,7 +8,8 @@
 借口:　获取图片验证码
 描述： 前段访问，可以访问到验证码图片
 
-url: /api/v1.0.image_codes/<image_code_id>
+url: /api/v1.0/image_codes/<image_code_id>
+http://127.0.0.1:5000/api/v1.0/image_code/4
 
 请求方式：　GET
 

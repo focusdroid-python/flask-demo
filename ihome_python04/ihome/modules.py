@@ -96,7 +96,7 @@ class House(BaseModel, db.Model):
     id = db.Column(db.Integer, primary_key=True) # 房屋编号
     user_id = db.Column(db.Integer, db.ForeignKey("ih_user_profile.id"), nullable=False) # 房屋主任的用户id
     area_id = db.Column(db.Integer, db.ForeignKey("ih_area_info.id"), nullable=False) # 归属地的区域编号
-    title = db.Column(db.Sting(64), nullable=False) # 标题
+    title = db.Column(db.String(64), nullable=False) # 标题
     price = db.Column(db.Integer, default=0) # 单价
     address = db.Column(db.String(512), default="") # 地址
     room_count = db.Column(db.Integer, default=1) # 房间数目
@@ -149,11 +149,11 @@ class House(BaseModel, db.Model):
             "min_days": self.min_days,
         }
 
-
-class Facility(BaseModel, db.Model):
-    """设施信息"""
-
-    __tablename__ = "ih_facility_info"
-
-    id = db.Column(db.Integer, primary_key=True) # 设施编号
-    name = db.Column(db.String(32), nullable=False) # 设施名字
+#
+# class Facility(BaseModel, db.Model):
+#     """设施信息"""
+#
+#     __tablename__ = "ih_facility_info"
+#
+#     id = db.Column(db.Integer, primary_key=True) # 设施编号
+#     name = db.Column(db.String(32), nullable=False) # 设施名字

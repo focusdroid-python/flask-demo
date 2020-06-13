@@ -10,6 +10,7 @@ class Config(object):
     # 数据库
     SQLALCHEMY_DATABASES_URI = "mysql://root:mysql@127.0.0.1:3306/ihome_python04"
     SQLALCHEMY_TRACK_MODIFICATIONS = True
+    SQLALCHEMY_DATABASE_URI = '192.168.0.106'
 
     # redis
     REDIS_HOST = "192.168.0.106"
