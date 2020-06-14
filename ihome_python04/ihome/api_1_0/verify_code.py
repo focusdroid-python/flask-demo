@@ -7,7 +7,7 @@ from ihome import constants
 from flask import current_app, jsonify, make_response, request
 from ihome.utils.response_code import RET
 from ihome.modules import User
-from ihome.libs.yuntongxun.SendTemplateSMS import CCP
+# from ihome.libs.yuntongxun.SendTemplateSMS import CCP # 引入这个提示没有这个包
 import random
 
 # GET 127.0.0.1/api/v1.0/image_code/<image_code_id>
@@ -68,10 +68,27 @@ def get_sms_code(mobile):
         # 图片中验证码过期
         return jsonify(error=RET.NODATA, errmsg="图片验证码时效")
 
+    # 删除redis手机验证码图片,防止用户使用同一个验证码验证多次
+    try:
+        redis_store.delete("image_code_%s" % image_code_id)
+    except Exception as e:
+        current_app.logger.error(e)
+
+
     # 与用户填写的值进行比对
     if real_image_code.lower() != image_code.lower():
         # 表示用户填写错误
         return jsonify(error=RET.DATAERR, errmsg="图片验证码错误")
+
+    # p判断对于这个手机号的操作，在６０秒没有没有记录，如果有，则认为用户操作频繁，就不做处理
+    try:
+        send_flag = redis_store.get("send_sms_code_%s" % mobile)
+    except Exception as e:
+        current_app.logger.error(e)
+    else:
+        if send_flag is not None:
+            # 表示在６０之内发送过请求
+            return jsonify(error=RET.REQERR, errmsg="请求过于频繁，请于60秒以后再试")
 
     # 判断手机号是否存在
     try:
@@ -82,12 +99,14 @@ def get_sms_code(mobile):
     if user is not None:
         return jsonify(error=RET.DATAEXIST, errmsg="用户手机号已存在")
 
+
     # 生成验证码
-    sms_code = "$06d" % random.randint(0, 999999)
+    sms_code = "%06d" % random.randint(0, 999999)
 
     # 如果手机号存在，则生成短信验证码
     try:
         redis_store.setex("sms_code_%s" % mobile, constants.SMS_CODE_REDIS_EXPIRES)
+        redis_store.setex("send_sms_code_%s" % mobile, constants.SEND_SMS_CODE_INTERVAL, 1)
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(error=RET.DBERR, errmsg="保存短信验证码异常")

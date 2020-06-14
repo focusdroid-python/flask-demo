@@ -1,47 +1,41 @@
-#coding=gbk
-
-#coding=utf-8
-
-#-*- coding: UTF-8 -*-  
-
+# coding=utf-8
 from CCPRestSDK import REST
-import ConfigParser
 
-#Ö÷ÕÊºÅ
+#ä¸»å¸å·
 accountSid= '8aaf07087249953401728cd13b4420f1';
 
-#Ö÷ÕÊºÅToken
+#ä¸»å¸å·Token
 accountToken= '16ef490ff19044788942064de145d1e8';
 
-#Ó¦ÓÃId
+#åº”ç”¨Id
 appId='8aaf07087249953401728cd13c4a20f8';
 
-#ÇëÇóµØÖ·£¬¸ñÊ½ÈçÏÂ£¬²»ĞèÒªĞ´http://
+#è¯·æ±‚åœ°å€ï¼Œæ ¼å¼å¦‚ä¸‹ï¼Œä¸éœ€è¦å†™http://
 serverIP='app.cloopen.com';
 
-#ÇëÇó¶Ë¿Ú 
+#è¯·æ±‚ç«¯å£ 
 serverPort='8883';
 
-#REST°æ±¾ºÅ
+#RESTç‰ˆæœ¬å·
 softVersion='2013-12-26';
 
-  # ·¢ËÍÄ£°å¶ÌĞÅ
-  # @param to ÊÖ»úºÅÂë
-  # @param datas ÄÚÈİÊı¾İ ¸ñÊ½ÎªÁĞ±í ÀıÈç£º['12','34']£¬Èç²»ĞèÌæ»»ÇëÌî ''
-  # @param $tempId Ä£°åId
+  # å‘é€æ¨¡æ¿çŸ­ä¿¡
+  # @param to æ‰‹æœºå·ç 
+  # @param datas å†…å®¹æ•°æ® æ ¼å¼ä¸ºåˆ—è¡¨ ä¾‹å¦‚ï¼š['12','34']ï¼Œå¦‚ä¸éœ€æ›¿æ¢è¯·å¡« ''
+  # @param $tempId æ¨¡æ¿Id
 
 class CCP(object):
-    """×Ô¼º·â×°·¢ËÍ¶ÌĞÅµÄÀàÊôĞÔ"""
-    # ÓÃÀ´±£´æÀàÊôĞÔ
+    """è‡ªå·±å°è£…å‘é€çŸ­ä¿¡çš„ç±»å±æ€§"""
+    # ç”¨æ¥ä¿å­˜ç±»å±æ€§
     instance = None
 
     def __new__(cls):
-        # ÅĞ¶Ï£Ã£Ã£ĞÀàÓĞÃ»ÓĞÒÑ¾­´´½¨ºÃµÄ¶ÔÏó£¬Èç¹ûÃ»ÓĞ£¬´´½¨Ò»¸ö¶ÔÏó£¬²¢ÇÒ±£´æ
-        # Èç¹ûÓĞ£¬Ôò±£´æµÄ¶ÔÏóÖ±½Ó·µ»Ø
+        # åˆ¤æ–­ï¼£ï¼£ï¼°ç±»æœ‰æ²¡æœ‰å·²ç»åˆ›å»ºå¥½çš„å¯¹è±¡ï¼Œå¦‚æœæ²¡æœ‰ï¼Œåˆ›å»ºä¸€ä¸ªå¯¹è±¡ï¼Œå¹¶ä¸”ä¿å­˜
+        # å¦‚æœæœ‰ï¼Œåˆ™ä¿å­˜çš„å¯¹è±¡ç›´æ¥è¿”å›
         if cls.instance is None:
             obj = super(CCP, cls).__new__(cls)
 
-            # ³õÊ¼»¯REST SDK
+            # åˆå§‹åŒ–REST SDK
             obj.rest = REST(serverIP, serverPort, softVersion)
             obj.rest.setAccount(accountSid, accountToken)
             obj.rest.setAppId(appId)
@@ -51,34 +45,20 @@ class CCP(object):
         return cls.instance
 
 
-    """×Ô¼º·â×°µÄ·¢ËÍ¶ÌĞÅµÄ¸¨ÖúÀà"""
+    """è‡ªå·±å°è£…çš„å‘é€çŸ­ä¿¡çš„è¾…åŠ©ç±»"""
+
+    # sendTemplateSMS(æ‰‹æœºå·ç ,å†…å®¹æ•°æ®,æ¨¡æ¿Id)
     def send_template_sms(self, to, datas, temp_id):
         result = self.rest.sendTemplateSMS(to, datas, temp_id)
-        # for k, v in result.iteritems():
-        #     if k == 'templateSMS':
-        #         for k, s in v.iteritems():
-        #             print('%s:%s' % (k, s))
-        #     else:
-        #         print('%s:%s' % (k, v))
-        status_code = result.get("statusCOde")
+        status_code = result.get("statusCode")
         if status_code == "000000":
-            # ±íÊ¾¶ÌĞÅ·¢ËÍ³É¹¦
+            # è¡¨ç¤ºçŸ­ä¿¡å‘é€æˆåŠŸ
             return 0
         else:
-            # ±íÊ¾·¢ËÍÊ§°Ü
+            # è¡¨ç¤ºå‘é€å¤±è´¥
             return 1
 
 if __name__ == "__main__":
     ccp = CCP()
     ret = ccp.send_template_sms("15701229789", ["1234", "5"], 1)
     print(ret)
-# ccp = CCP()
-# ccp.send_template_sms()
-# ccp.send_template_sms()
-# ccp.send_template_sms()
-#
-#
-# ccp2 = CCP()
-
-
-#sendTemplateSMS(ÊÖ»úºÅÂë,ÄÚÈİÊı¾İ,Ä£°åId)
