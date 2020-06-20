@@ -6,8 +6,8 @@ from ihome import redis_store
 from ihome import constants
 from flask import current_app, jsonify, make_response, request
 from ihome.utils.response_code import RET
+# from ihome.libs.yuntongxun.sms import CCP # 引入这个提示没有这个包
 from ihome.modules import User
-# from ihome.libs.yuntongxun.SendTemplateSMS import CCP # 引入这个提示没有这个包
 import random
 
 # GET 127.0.0.1/api/v1.0/image_code/<image_code_id>
@@ -90,6 +90,16 @@ def get_sms_code(mobile):
             # 表示在６０之内发送过请求
             return jsonify(error=RET.REQERR, errmsg="请求过于频繁，请于60秒以后再试")
 
+    # 判断这个手机号的操作，在60秒之内有没有之前的记录，如果有则认为用户操作频繁，不接受处理
+    try:
+        send_flag = redis_store.get("send_sms_code_%s" % mobile)
+    except Exception as e:
+        current_app.loger.error(e)
+    else:
+        if send_flag is not None:
+            # 表示在60秒内有过发送的记录
+            return jsonify(error=RET.REQERR, errmsg="请求过于频繁，请60秒之后再试")
+
     # 判断手机号是否存在
     try:
         user = User.query.filter_by(mobile=mobile).first()
@@ -105,7 +115,8 @@ def get_sms_code(mobile):
 
     # 如果手机号存在，则生成短信验证码
     try:
-        redis_store.setex("sms_code_%s" % mobile, constants.SMS_CODE_REDIS_EXPIRES)
+        redis_store.setex("sms_code_%s" % mobile, constants.SMS_CODE_REDIS_EXPIRES, sms_code)
+        # 保存这个手机号的记录，防止用户在６０s内再次发送短信验证码
         redis_store.setex("send_sms_code_%s" % mobile, constants.SEND_SMS_CODE_INTERVAL, 1)
     except Exception as e:
         current_app.logger.error(e)

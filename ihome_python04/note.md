@@ -5,3 +5,8 @@
     - 4. 自测
     - 5. 编写接口文档
         - 
+        
+### 文档地址
+    -  [python-redis](https://redis-py.readthedocs.io/en/latest/)
+    - redis http://redisdoc.com/index.html
+    - 

@@ -10,10 +10,11 @@ class Config(object):
     # 数据库
     SQLALCHEMY_DATABASES_URI = "mysql://root:mysql@127.0.0.1:3306/ihome_python04"
     SQLALCHEMY_TRACK_MODIFICATIONS = True
-    SQLALCHEMY_DATABASE_URI = '192.168.0.106'
+    # SQLALCHEMY_DATABASE_URI = "127.0.0.1"
 
     # redis
-    REDIS_HOST = "192.168.0.106"
+    REDIS_HOST = "192.168.0.108"
+    # REDIS_HOST = "127.0.0.1"
     REDIS_PORT = 6379
 
     # flask-session配置 https://pythonhosted.org/Flask-Session/
