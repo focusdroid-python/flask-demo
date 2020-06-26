@@ -5,15 +5,18 @@ from ihome.utils.common import login_required
 from flask import g, current_app, jsonify, request
 from ihome.utils.response_code import RET
 
+from ihome.utils.image_storage import storage
+from ihome.modules import User
+from ihome import db, constants
 
-@api.route("/users/avatar", methods=["POST"])
+@api.route("/user/avatar", methods=["POST"])
 @login_required
 def set_user_avatar():
     """
-    设置用户图像
-    参数：　图片（多媒体表单格式）　　用户id (g.user_id)
+        设置用户图像
+        参数：　图片　　用户id  　　
     """
-    # 获取参数, 装饰器的代码已经将user_id保存在g对象中，所以视图中可以可以直接读取
+    # 装饰器的代码中已经将user_id保存到g对象中，所以视图中可以直接读取
     user_id = g.user_id
 
     # 获取图片
@@ -24,7 +27,25 @@ def set_user_avatar():
 
     image_data = image_file.read()
 
-    # 调用七牛上传文件
-    storage(image_data)
-    #
+    # 调用七牛上传文件, 返回文件名
+    try:
+        file_name = storage(image_data)
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(error=RET.THIRDERR, errmsg="上传文件失败")
+
+    # 保存文件名到数据库中
+    try:
+        User.query.filter_by(id=user_id).update({"avatar_url": file_name})
+        db.session.commit()
+    except Exception as e:
+        db.session.rollback()
+        current_app.logger.error(e)
+        return jsonify(error=RET.DBERR, errmsg="保存图片失败")
+
+
+    avatar_url = constants.QUNIU_URL_DOMAIN + file_name
+    # 保存成功反馈
+    return jsonify(error=RET.OK, errmsg="保存成功",data={"avatar_url": avatar_url})
+
 

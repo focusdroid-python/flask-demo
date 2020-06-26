@@ -14,3 +14,6 @@ LOGIN_ERROR_MAX_TIMES = 5
 
 # 登陆错误限制的实现 单位　：秒
 LOGIN_ERROR_DORBID_TIME = 600
+
+# 七牛的域名
+QUNIU_URL_DOMAIN = "http://qc9evf10t.bkt.clouddn.com/"
