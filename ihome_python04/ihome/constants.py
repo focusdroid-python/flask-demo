@@ -17,3 +17,6 @@ LOGIN_ERROR_DORBID_TIME = 600
 
 # 七牛的域名
 QUNIU_URL_DOMAIN = "http://qc9evf10t.bkt.clouddn.com/"
+
+# 城区信息的缓存时间, 单位是：秒
+AREA_INFO_REDIS_CHCHE_EXPIRES = 7200

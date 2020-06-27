@@ -2494,3 +2494,46 @@ AttributeError: 'NoneType' object has no attribute 'sign'
 INFO _internal.py:87 127.0.0.1 - - [27/Jun/2020 10:46:14] "GET /api/v1.0/areas HTTP/1.1" 500 -
 INFO _internal.py:87  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 INFO _internal.py:87 127.0.0.1 - - [27/Jun/2020 10:46:33] "GET /api/v1.0/areas HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [27/Jun/2020 11:34:59] "GET /api/v1.0/areas HTTP/1.1" 200 -
+INFO _internal.py:87  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:87 127.0.0.1 - - [27/Jun/2020 12:47:48] "GET /api/v1.0/areas HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [27/Jun/2020 12:48:49] "GET /api/v1.0/areas HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [27/Jun/2020 12:48:58] "GET /api/v1.0/areas HTTP/1.1" 200 -
+INFO _internal.py:87  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:87 127.0.0.1 - - [27/Jun/2020 13:45:43] "GET /api/v1.0/areas HTTP/1.1" 200 -
+ERROR app.py:1423 Exception on /api/v1.0/user [GET]
+Traceback (most recent call last):
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/focusdroid/flask/ihome_python04/ihome/api_1_0/profile.py", line 84, in get_user
+    user_id = g.user_id
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/werkzeug/local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: '_AppCtxGlobals' object has no attribute 'user_id'
+INFO _internal.py:87 127.0.0.1 - - [27/Jun/2020 13:45:50] "GET /api/v1.0/user HTTP/1.1" 500 -
+ERROR app.py:1423 Exception on /api/v1.0/user [GET]
+Traceback (most recent call last):
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/focusdroid/flask/ihome_python04/ihome/api_1_0/profile.py", line 84, in get_user
+    user_id = g.user_id
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/werkzeug/local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: '_AppCtxGlobals' object has no attribute 'user_id'
+INFO _internal.py:87 127.0.0.1 - - [27/Jun/2020 13:46:06] "GET /api/v1.0/user?user_id=1 HTTP/1.1" 500 -

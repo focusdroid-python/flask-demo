@@ -1,1 +1,22 @@
 Generic single-database configuration.
+
+### 城区信息
+```
+INSERT INTO `ih_area_info`(`name`) VALUE ('东城区'),('西城区'),('朝阳区'),('海淀区'),('昌平区'),('丰台区'),('房山区'),('通州区'),('顺义区'),('大兴区'),('怀柔区'),('平谷区'),('密云区'),('延庆区'),('石景山区');
+INSERT INTO `ih_facility_info`(`name`) VALUE ('无线网络'),('热水淋浴'),('空调'),('暖气'),('允许吸烟'),('饮水设备'),('牙具'),('香皂'),('拖鞋'),('手纸'),('毛巾'),('沐浴露、洗发露'),('洗衣机'),('电梯'),('允许做饭'),('允许带宠物'),('允许聚会'),('门禁系统'),('停车位'),('有线网络'),('电视'),('浴缸');
+```
+
+```
+
+from app import models
+#1导入模型，导入表
+
+manager= Manager(app)
+Migrate(app=app,db=db)#2位置参数确保正确，用app=？代替直接写app
+manager.add_command("db",MigrateCommand)
+
+#3在命令窗口 重新执行
+python  manage.py db migrate
+python manage.py db  upgrade
+#只要这俩句不需要再执行Python manage.py init(第一次执行)
+```
