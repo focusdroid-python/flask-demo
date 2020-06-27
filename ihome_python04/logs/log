@@ -2103,3 +2103,394 @@ WARNING index.py:12 warn msg
 INFO index.py:13 info msg
 DEBUG index.py:14 debug msg
 INFO _internal.py:87 127.0.0.1 - - [20/Jun/2020 17:16:50] "GET /api/v1.0/index HTTP/1.1" 200 -
+INFO _internal.py:87  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ERROR houses.py:22 (sqlite3.OperationalError) no such table: ih_area_info [SQL: u'SELECT ih_area_info.create_time AS ih_area_info_create_time, ih_area_info.update_time AS ih_area_info_update_time, ih_area_info.id AS ih_area_info_id, ih_area_info.name AS ih_area_info_name \nFROM ih_area_info']
+ERROR app.py:1423 Exception on /api/v1.0/areas [GET]
+Traceback (most recent call last):
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1479, in full_dispatch_request
+    response = self.process_response(response)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1693, in process_response
+    self.save_session(ctx.session, response)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 837, in save_session
+    return self.session_interface.save_session(self, session, response)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask_session/sessions.py", line 166, in save_session
+    time=total_seconds(app.permanent_session_lifetime))
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/client.py", line 1093, in setex
+    return self.execute_command('SETEX', name, time, value)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/client.py", line 570, in execute_command
+    connection = pool.get_connection(command_name, **options)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/connection.py", line 897, in get_connection
+    connection = self.make_connection()
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/connection.py", line 906, in make_connection
+    return self.connection_class(**self.connection_kwargs)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/connection.py", line 399, in __init__
+    self.port = int(port)
+ValueError: invalid literal for int() with base 10: '192.168.0.108'
+INFO _internal.py:87 127.0.0.1 - - [26/Jun/2020 18:20:48] "GET /api/v1.0/areas HTTP/1.1" 500 -
+INFO _internal.py:87  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ERROR houses.py:22 (sqlite3.OperationalError) no such table: ih_area_info [SQL: u'SELECT ih_area_info.create_time AS ih_area_info_create_time, ih_area_info.update_time AS ih_area_info_update_time, ih_area_info.id AS ih_area_info_id, ih_area_info.name AS ih_area_info_name \nFROM ih_area_info']
+ERROR app.py:1423 Exception on /api/v1.0/areas [GET]
+Traceback (most recent call last):
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1479, in full_dispatch_request
+    response = self.process_response(response)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1693, in process_response
+    self.save_session(ctx.session, response)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 837, in save_session
+    return self.session_interface.save_session(self, session, response)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask_session/sessions.py", line 166, in save_session
+    time=total_seconds(app.permanent_session_lifetime))
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/client.py", line 1093, in setex
+    return self.execute_command('SETEX', name, time, value)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/client.py", line 570, in execute_command
+    connection = pool.get_connection(command_name, **options)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/connection.py", line 897, in get_connection
+    connection = self.make_connection()
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/connection.py", line 906, in make_connection
+    return self.connection_class(**self.connection_kwargs)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/connection.py", line 399, in __init__
+    self.port = int(port)
+ValueError: invalid literal for int() with base 10: '192.168.0.108'
+INFO _internal.py:87 127.0.0.1 - - [26/Jun/2020 18:21:29] "GET /api/v1.0/areas HTTP/1.1" 500 -
+INFO _internal.py:87  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ERROR houses.py:22 (sqlite3.OperationalError) no such table: ih_area_info [SQL: u'SELECT ih_area_info.create_time AS ih_area_info_create_time, ih_area_info.update_time AS ih_area_info_update_time, ih_area_info.id AS ih_area_info_id, ih_area_info.name AS ih_area_info_name \nFROM ih_area_info']
+ERROR app.py:1423 Exception on /api/v1.0/areas [GET]
+Traceback (most recent call last):
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1479, in full_dispatch_request
+    response = self.process_response(response)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1693, in process_response
+    self.save_session(ctx.session, response)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 837, in save_session
+    return self.session_interface.save_session(self, session, response)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask_session/sessions.py", line 166, in save_session
+    time=total_seconds(app.permanent_session_lifetime))
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/client.py", line 1093, in setex
+    return self.execute_command('SETEX', name, time, value)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/client.py", line 570, in execute_command
+    connection = pool.get_connection(command_name, **options)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/connection.py", line 897, in get_connection
+    connection = self.make_connection()
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/connection.py", line 906, in make_connection
+    return self.connection_class(**self.connection_kwargs)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/connection.py", line 399, in __init__
+    self.port = int(port)
+ValueError: invalid literal for int() with base 10: '192.168.0.108'
+INFO _internal.py:87 127.0.0.1 - - [26/Jun/2020 18:22:43] "GET /api/v1.0/areas HTTP/1.1" 500 -
+INFO _internal.py:87  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ERROR houses.py:22 (sqlite3.OperationalError) no such table: ih_area_info [SQL: u'SELECT ih_area_info.create_time AS ih_area_info_create_time, ih_area_info.update_time AS ih_area_info_update_time, ih_area_info.id AS ih_area_info_id, ih_area_info.name AS ih_area_info_name \nFROM ih_area_info']
+ERROR app.py:1423 Exception on /api/v1.0/areas [GET]
+Traceback (most recent call last):
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1479, in full_dispatch_request
+    response = self.process_response(response)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1693, in process_response
+    self.save_session(ctx.session, response)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 837, in save_session
+    return self.session_interface.save_session(self, session, response)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask_session/sessions.py", line 166, in save_session
+    time=total_seconds(app.permanent_session_lifetime))
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/client.py", line 1093, in setex
+    return self.execute_command('SETEX', name, time, value)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/client.py", line 570, in execute_command
+    connection = pool.get_connection(command_name, **options)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/connection.py", line 897, in get_connection
+    connection = self.make_connection()
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/connection.py", line 906, in make_connection
+    return self.connection_class(**self.connection_kwargs)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/connection.py", line 399, in __init__
+    self.port = int(port)
+ValueError: invalid literal for int() with base 10: '127.0.0.1'
+INFO _internal.py:87 127.0.0.1 - - [26/Jun/2020 18:23:10] "GET /api/v1.0/areas HTTP/1.1" 500 -
+INFO _internal.py:87  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ERROR houses.py:22 Could not parse rfc1738 URL from string '127.0.0.1'
+ERROR app.py:1423 Exception on /api/v1.0/areas [GET]
+Traceback (most recent call last):
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1479, in full_dispatch_request
+    response = self.process_response(response)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1693, in process_response
+    self.save_session(ctx.session, response)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 837, in save_session
+    return self.session_interface.save_session(self, session, response)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask_session/sessions.py", line 166, in save_session
+    time=total_seconds(app.permanent_session_lifetime))
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/client.py", line 1093, in setex
+    return self.execute_command('SETEX', name, time, value)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/client.py", line 570, in execute_command
+    connection = pool.get_connection(command_name, **options)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/connection.py", line 897, in get_connection
+    connection = self.make_connection()
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/connection.py", line 906, in make_connection
+    return self.connection_class(**self.connection_kwargs)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/connection.py", line 399, in __init__
+    self.port = int(port)
+ValueError: invalid literal for int() with base 10: '192.168.0.108'
+INFO _internal.py:87 127.0.0.1 - - [26/Jun/2020 18:23:59] "GET /api/v1.0/areas HTTP/1.1" 500 -
+INFO _internal.py:87  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ERROR houses.py:22 Could not parse rfc1738 URL from string '127.0.0.1'
+ERROR app.py:1423 Exception on /api/v1.0/areas [GET]
+Traceback (most recent call last):
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1479, in full_dispatch_request
+    response = self.process_response(response)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1693, in process_response
+    self.save_session(ctx.session, response)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 837, in save_session
+    return self.session_interface.save_session(self, session, response)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask_session/sessions.py", line 166, in save_session
+    time=total_seconds(app.permanent_session_lifetime))
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/client.py", line 1093, in setex
+    return self.execute_command('SETEX', name, time, value)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/client.py", line 570, in execute_command
+    connection = pool.get_connection(command_name, **options)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/connection.py", line 897, in get_connection
+    connection = self.make_connection()
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/connection.py", line 906, in make_connection
+    return self.connection_class(**self.connection_kwargs)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/connection.py", line 399, in __init__
+    self.port = int(port)
+ValueError: invalid literal for int() with base 10: '127.0.0.1'
+INFO _internal.py:87 127.0.0.1 - - [26/Jun/2020 18:24:26] "GET /api/v1.0/areas HTTP/1.1" 500 -
+INFO _internal.py:87  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ERROR houses.py:23 Could not parse rfc1738 URL from string '127.0.0.1'
+ERROR app.py:1423 Exception on /api/v1.0/areas [GET]
+Traceback (most recent call last):
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1479, in full_dispatch_request
+    response = self.process_response(response)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1693, in process_response
+    self.save_session(ctx.session, response)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 837, in save_session
+    return self.session_interface.save_session(self, session, response)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask_session/sessions.py", line 166, in save_session
+    time=total_seconds(app.permanent_session_lifetime))
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/client.py", line 1093, in setex
+    return self.execute_command('SETEX', name, time, value)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/client.py", line 570, in execute_command
+    connection = pool.get_connection(command_name, **options)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/connection.py", line 897, in get_connection
+    connection = self.make_connection()
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/connection.py", line 906, in make_connection
+    return self.connection_class(**self.connection_kwargs)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/connection.py", line 399, in __init__
+    self.port = int(port)
+ValueError: invalid literal for int() with base 10: '127.0.0.1'
+INFO _internal.py:87 127.0.0.1 - - [26/Jun/2020 18:30:11] "GET /api/v1.0/areas HTTP/1.1" 500 -
+ERROR __init__.py:98 Error: Directory migrations already exists
+ERROR __init__.py:98 Error: Directory migrations already exists
+INFO _internal.py:87  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ERROR app.py:1423 Exception on /api/v1.0/areas [GET]
+Traceback (most recent call last):
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1479, in full_dispatch_request
+    response = self.process_response(response)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1693, in process_response
+    self.save_session(ctx.session, response)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 837, in save_session
+    return self.session_interface.save_session(self, session, response)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask_session/sessions.py", line 166, in save_session
+    time=total_seconds(app.permanent_session_lifetime))
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/client.py", line 1093, in setex
+    return self.execute_command('SETEX', name, time, value)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/client.py", line 570, in execute_command
+    connection = pool.get_connection(command_name, **options)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/connection.py", line 897, in get_connection
+    connection = self.make_connection()
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/connection.py", line 906, in make_connection
+    return self.connection_class(**self.connection_kwargs)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/connection.py", line 399, in __init__
+    self.port = int(port)
+ValueError: invalid literal for int() with base 10: '192.168.0.108'
+INFO _internal.py:87 127.0.0.1 - - [26/Jun/2020 18:58:47] "GET /api/v1.0/areas HTTP/1.1" 500 -
+INFO _internal.py:87  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ERROR app.py:1423 Exception on /api/v1.0/areas [GET]
+Traceback (most recent call last):
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1479, in full_dispatch_request
+    response = self.process_response(response)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1693, in process_response
+    self.save_session(ctx.session, response)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 837, in save_session
+    return self.session_interface.save_session(self, session, response)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask_session/sessions.py", line 166, in save_session
+    time=total_seconds(app.permanent_session_lifetime))
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/client.py", line 1093, in setex
+    return self.execute_command('SETEX', name, time, value)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/client.py", line 570, in execute_command
+    connection = pool.get_connection(command_name, **options)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/connection.py", line 897, in get_connection
+    connection = self.make_connection()
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/connection.py", line 906, in make_connection
+    return self.connection_class(**self.connection_kwargs)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/connection.py", line 399, in __init__
+    self.port = int(port)
+ValueError: invalid literal for int() with base 10: '127.0.0.1'
+INFO _internal.py:87 127.0.0.1 - - [26/Jun/2020 18:59:23] "GET /api/v1.0/areas HTTP/1.1" 500 -
+INFO _internal.py:87  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ERROR app.py:1423 Exception on /api/v1.0/areas [GET]
+Traceback (most recent call last):
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1479, in full_dispatch_request
+    response = self.process_response(response)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1693, in process_response
+    self.save_session(ctx.session, response)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 837, in save_session
+    return self.session_interface.save_session(self, session, response)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask_session/sessions.py", line 166, in save_session
+    time=total_seconds(app.permanent_session_lifetime))
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/client.py", line 1093, in setex
+    return self.execute_command('SETEX', name, time, value)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/client.py", line 570, in execute_command
+    connection = pool.get_connection(command_name, **options)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/connection.py", line 897, in get_connection
+    connection = self.make_connection()
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/connection.py", line 906, in make_connection
+    return self.connection_class(**self.connection_kwargs)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/connection.py", line 399, in __init__
+    self.port = int(port)
+ValueError: invalid literal for int() with base 10: '127.0.0.1'
+INFO _internal.py:87 127.0.0.1 - - [26/Jun/2020 19:01:34] "GET /api/v1.0/areas HTTP/1.1" 500 -
+INFO _internal.py:87  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ERROR app.py:1423 Exception on /api/v1.0/areas [GET]
+Traceback (most recent call last):
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1479, in full_dispatch_request
+    response = self.process_response(response)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1693, in process_response
+    self.save_session(ctx.session, response)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 837, in save_session
+    return self.session_interface.save_session(self, session, response)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask_session/sessions.py", line 166, in save_session
+    time=total_seconds(app.permanent_session_lifetime))
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/client.py", line 1093, in setex
+    return self.execute_command('SETEX', name, time, value)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/client.py", line 570, in execute_command
+    connection = pool.get_connection(command_name, **options)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/connection.py", line 897, in get_connection
+    connection = self.make_connection()
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/connection.py", line 906, in make_connection
+    return self.connection_class(**self.connection_kwargs)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/connection.py", line 399, in __init__
+    self.port = int(port)
+ValueError: invalid literal for int() with base 10: '127.0.0.1'
+INFO _internal.py:87 127.0.0.1 - - [26/Jun/2020 19:03:03] "GET /api/v1.0/areas HTTP/1.1" 500 -
+INFO _internal.py:87  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ERROR app.py:1423 Exception on /api/v1.0/areas [GET]
+Traceback (most recent call last):
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1479, in full_dispatch_request
+    response = self.process_response(response)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1693, in process_response
+    self.save_session(ctx.session, response)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 837, in save_session
+    return self.session_interface.save_session(self, session, response)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask_session/sessions.py", line 166, in save_session
+    time=total_seconds(app.permanent_session_lifetime))
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/client.py", line 1093, in setex
+    return self.execute_command('SETEX', name, time, value)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/client.py", line 570, in execute_command
+    connection = pool.get_connection(command_name, **options)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/connection.py", line 897, in get_connection
+    connection = self.make_connection()
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/connection.py", line 906, in make_connection
+    return self.connection_class(**self.connection_kwargs)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/connection.py", line 399, in __init__
+    self.port = int(port)
+ValueError: invalid literal for int() with base 10: '127.0.0.1'
+INFO _internal.py:87 127.0.0.1 - - [26/Jun/2020 19:06:15] "GET /api/v1.0/areas HTTP/1.1" 500 -
+INFO _internal.py:87  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ERROR app.py:1423 Exception on /api/v1.0/areas [GET]
+Traceback (most recent call last):
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1479, in full_dispatch_request
+    response = self.process_response(response)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1693, in process_response
+    self.save_session(ctx.session, response)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 837, in save_session
+    return self.session_interface.save_session(self, session, response)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask_session/sessions.py", line 166, in save_session
+    time=total_seconds(app.permanent_session_lifetime))
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/client.py", line 1093, in setex
+    return self.execute_command('SETEX', name, time, value)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/client.py", line 570, in execute_command
+    connection = pool.get_connection(command_name, **options)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/connection.py", line 897, in get_connection
+    connection = self.make_connection()
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/connection.py", line 906, in make_connection
+    return self.connection_class(**self.connection_kwargs)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/connection.py", line 399, in __init__
+    self.port = int(port)
+ValueError: invalid literal for int() with base 10: '192.168.0.108'
+INFO _internal.py:87 127.0.0.1 - - [26/Jun/2020 19:06:39] "GET /api/v1.0/areas HTTP/1.1" 500 -
+INFO _internal.py:87  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ERROR app.py:1423 Exception on /api/v1.0/areas [GET]
+Traceback (most recent call last):
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1479, in full_dispatch_request
+    response = self.process_response(response)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1693, in process_response
+    self.save_session(ctx.session, response)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 837, in save_session
+    return self.session_interface.save_session(self, session, response)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask_session/sessions.py", line 166, in save_session
+    time=total_seconds(app.permanent_session_lifetime))
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/client.py", line 1093, in setex
+    return self.execute_command('SETEX', name, time, value)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/client.py", line 570, in execute_command
+    connection = pool.get_connection(command_name, **options)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/connection.py", line 897, in get_connection
+    connection = self.make_connection()
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/connection.py", line 906, in make_connection
+    return self.connection_class(**self.connection_kwargs)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/redis/connection.py", line 399, in __init__
+    self.port = int(port)
+ValueError: invalid literal for int() with base 10: '192.168.0.108'
+INFO _internal.py:87 127.0.0.1 - - [26/Jun/2020 19:08:26] "GET /api/v1.0/areas HTTP/1.1" 500 -
+INFO _internal.py:87  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ERROR app.py:1423 Exception on /api/v1.0/areas [GET]
+Traceback (most recent call last):
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1479, in full_dispatch_request
+    response = self.process_response(response)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1693, in process_response
+    self.save_session(ctx.session, response)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 837, in save_session
+    return self.session_interface.save_session(self, session, response)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask_session/sessions.py", line 168, in save_session
+    session_id = self._get_signer(app).sign(want_bytes(session.sid))
+AttributeError: 'NoneType' object has no attribute 'sign'
+INFO _internal.py:87 127.0.0.1 - - [27/Jun/2020 10:42:44] "GET /api/v1.0/areas HTTP/1.1" 500 -
+INFO _internal.py:87  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ERROR app.py:1423 Exception on /api/v1.0/areas [GET]
+Traceback (most recent call last):
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1479, in full_dispatch_request
+    response = self.process_response(response)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 1693, in process_response
+    self.save_session(ctx.session, response)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask/app.py", line 837, in save_session
+    return self.session_interface.save_session(self, session, response)
+  File "/home/focusdroid/.virtualenvs/flask_py/lib/python2.7/site-packages/flask_session/sessions.py", line 168, in save_session
+    session_id = self._get_signer(app).sign(want_bytes(session.sid))
+AttributeError: 'NoneType' object has no attribute 'sign'
+INFO _internal.py:87 127.0.0.1 - - [27/Jun/2020 10:46:14] "GET /api/v1.0/areas HTTP/1.1" 500 -
+INFO _internal.py:87  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:87 127.0.0.1 - - [27/Jun/2020 10:46:33] "GET /api/v1.0/areas HTTP/1.1" 200 -

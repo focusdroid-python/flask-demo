@@ -1,6 +1,6 @@
 # coding:utf-8
 from . import api
-# from ihome import models
+# from ihome import db, models
 # import logging
 from flask import current_app, make_response
 from flask_wtf import csrf
