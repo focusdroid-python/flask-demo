@@ -113,7 +113,6 @@ def get_user_auth():
 
     return jsonify(error=RET.OK, errmsg="ok", data=user.auth_to_dict())
 
-
 @api.route("/users/auth", methods=["POST"])
 def set_user_auth():
     """保存实名认证信息"""
