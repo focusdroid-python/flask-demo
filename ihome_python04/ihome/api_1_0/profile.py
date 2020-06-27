@@ -94,3 +94,52 @@ def get_user():
         return jsonify(error=RET.NODATA, errmsg="无效操作")
 
     return jsonify(error=RET.OK, errmsg="ok", data=user.to_dict())
+
+@api.route("/users/auth", methods=['GET'])
+@login_required
+def get_user_auth():
+    """获取用户实名认证信息"""
+    user_id = g.user_id
+
+    #　在数据库中查询信息
+    try:
+        user = User.query.get(user_id)
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(error=RET.DBERR, errmsg="获取用户实名信息失败")
+
+    if user is None:
+        return jsonify(error=RET.NODATA, errmsg="无效操作")
+
+    return jsonify(error=RET.OK, errmsg="ok", data=user.auth_to_dict())
+
+
+@api.route("/users/auth", methods=["POST"])
+def set_user_auth():
+    """保存实名认证信息"""
+    user_id = g.user_id
+
+    # 获取参数
+    req_data = request.get_json()
+
+    if not req_data:
+        return jsonify(error=RET.PARAMERR, errmsg="参数错误")
+
+    real_name = req_data.get("real_name") # 真实姓名
+    id_card = req_data.get("id_card") # 身份证号
+
+    #　参数校验
+    if not all([real_name, id_card]):
+        return jsonify(error=RET.PARAMERR, errmsg="参数错误")
+
+    # 保存用户姓名和身份证号
+    try:
+        # 身份证号只能填写一次的情况下，查询时候使用real_name=None和id_card=None都为空的这种情况就只能修改一次
+        User.query.filter_by(id=user_id, real_name=None, id_card=None).update({"real_name": real_name, "id_card":id_card})
+        db.session.commit()
+    except Exception as e:
+        current_app.logger.error(e)
+        db.session.rollback()
+        return jsonify(error=RET.DBERR, errmsg="保存用户实名信息失败")
+
+    return jsonify(error=RET.OK, errmsg="ok")

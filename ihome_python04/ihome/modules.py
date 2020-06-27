@@ -76,9 +76,10 @@ class User(BaseModel,db.Model):
             user_info['avatar_url']=constants.QUNIU_URL_DOMAIN + self.avatar_url
         return user_info
 
-    def to_auth_dict(self):
+    def auth_to_dict(self):
         """实名认证数据"""
         return {
+            'user_id':self.id,
             'real_name':self.real_name,
             'id_card':self.id_card
         }
