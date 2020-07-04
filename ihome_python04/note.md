@@ -25,4 +25,14 @@
          
 #### 文件存储解决方案
 1. 自己搭建文件存储系统　FastDFS 快速分布式文件存储系统　　HDFS Hadoop分布式文件系统
-２．选择第三方服务，　七牛云存储
+２．选择第三方服务，　七牛云存储  pip install qiniu  // 需要升级pip
+
+
+### 使用celery
+```
+使用celery实现异步任务
+
+pip install Celery
+
+
+```

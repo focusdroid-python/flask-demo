@@ -5,8 +5,9 @@ from ihome.utils.common import login_required
 from flask import g, current_app, jsonify, request
 from ihome.utils.response_code import RET
 
-from ihome.modules import Area, House, Facility
+from ihome.modules import Area, House, Facility, HouseImage
 from ihome import db, constants, redis_store
+from ihome.utils.image_storage import storage
 import json
 
 
@@ -173,5 +174,52 @@ def save_house_image():
     house_id = request.form.get("house_id")
 
     if not all([image_file, house_id]):
-        pass
+        return jsonify(error=RET.PARAMERR, errmsg="参数错误")
+
+
+    # 判断house_id正确性
+    try:
+        house = House.query.get(house_id)
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(error=RET ,errmsg="数据库异常")
+
+    if house is None:
+        return jsonify(error=RET.NODATA, errmsg="房屋不存在")
+
+    image_data = image_file.read()
+    #　将图片保存到七牛中
+    try:
+        file_name = storage(image_data)
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(error=RET.THIRDERR, errmsg="保存图片失败")
+
+    # 保存图片信息到数据库
+    house_image = HouseImage(house_id=house_id, url=file_name)
+    db.session.add(house_image)
+
+    # 处理房屋的主图片
+    if not house.index_image_url:
+        house.index_image_url = file_name
+        db.session.add(house)
+
+    try:
+        db.session.commit()
+    except Exception as e:
+        current_app.logger.error(e)
+        db.session.rollback()
+        return jsonify(error=RET.DBERR, errmsg="保存图片数据异常")
+
+    image_url = constants.QUNIU_URL_DOMAIN + file_name
+    return jsonify(error=RET.OK, errmsg="ok", data={"image_url": image_url})
+
+
+
+
+
+
+
+
+
 
