@@ -30,9 +30,28 @@
 
 ### 使用celery
 ```
-使用celery实现异步任务
+使用celery实现异步任务，　
 
 pip install Celery
+
+
+发布任务的一方
+flask
+django                      真正执行任务的一方
+
+       任务发送           任务１　　获取任务处理
+客户端　　－－－－－－－－>　任务２ <－－－－－－－－－－－－－　　任务处理者（worker）
+                        任务３                             多进程
+                        rabbitMQ MessageQueue             协程　gevent / greenlet
+                        redis
+
+                       第四方，存放结果数据,backend
+                        存放worker执行之后的结果，客户端需要结果可以来查询
+                         redis / mysql
+
+celery使用方法
+send_sms.delay()                                              开启celery worker 
+                                                              celery -A定义任务的python模块，　worker -l info
 
 
 ```
