@@ -10,7 +10,7 @@ from ihome.utils.response_code import RET
 from ihome.modules import User
 import random
 # from ihome.tasks.task_sms import send_sms
-from ihome.tasks.sms.tasks import send_sms
+from ihome.tasks.sms.tasks import send_sms  # 封装置后的celery
 
 # GET 127.0.0.1/api/v1.0/image_code/<image_code_id>
 

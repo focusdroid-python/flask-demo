@@ -2551,3 +2551,9 @@ INFO _internal.py:87  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 INFO _internal.py:87  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 INFO _internal.py:87 127.0.0.1 - - [05/Jul/2020 16:33:06] "GET /api/v1.0/image_code/3 HTTP/1.1" 200 -
 INFO _internal.py:87 127.0.0.1 - - [05/Jul/2020 16:33:33] "GET /api/v1.0/sms_codes/15701229789?image_code=TQNB&image_code_id=3 HTTP/1.1" 200 -
+INFO _internal.py:87  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:87 127.0.0.1 - - [05/Jul/2020 16:49:11] "GET /api/v1.0/image_code/4 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [05/Jul/2020 16:49:34] "GET /api/v1.0/sms_codes/15701229789?image_code=LESK&image_code_id=4 HTTP/1.1" 200 -
+INFO _internal.py:87  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:87 127.0.0.1 - - [05/Jul/2020 16:53:47] "GET /api/v1.0/image_code/4 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [05/Jul/2020 16:54:10] "GET /api/v1.0/sms_codes/15701229789?image_code=UTPX&image_code_id=4 HTTP/1.1" 200 -
