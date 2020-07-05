@@ -52,6 +52,8 @@ django                      真正执行任务的一方
 celery使用方法
 send_sms.delay()                                              开启celery worker 
                                                               celery -A定义任务的python模块，　worker -l info
+/sms_codes/<re(r'1[34578]\d{9}'):mobile
+(flask_py) focusdroid@focusdroid:~/flask/ihome_python04$ celery -A ihome.tasks.task_sms worker -l info
 
 
 ```

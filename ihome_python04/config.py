@@ -13,8 +13,8 @@ class Config(object):
     # SQLALCHEMY_DATABASE_URI = '127.0.0.1'
 
     # redis
-    REDIS_HOST = '192.168.0.108'
-    # REDIS_HOST = '127.0.0.1'
+    # REDIS_HOST = '192.168.0.108'
+    REDIS_HOST = '127.0.0.1'
     REDIS_PORT = 6379
 
     # flask-session配置 https://pythonhosted.org/Flask-Session/

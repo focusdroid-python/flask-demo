@@ -223,7 +223,7 @@ def get_sms_code(mobile):
     #     return jsonify(error=RET.THIRDERR, errmsg="短信服务器发送失败")
 
     # 使用celery异步发送短信，　delay函数滴啊用后立即返回
-    result = send_sms.delay()
+    send_sms.delay(mobile, [sms_code, int(constants.SMS_CODE_REDIS_EXPIRES / 60)], 1)
 
     # 返回值
     # if result == 0:
