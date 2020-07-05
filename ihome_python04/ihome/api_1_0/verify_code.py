@@ -9,7 +9,8 @@ from ihome.utils.response_code import RET
 # from ihome.libs.yuntongxun.sms import CCP # 引入这个提示没有这个包
 from ihome.modules import User
 import random
-from ihome.tasks.task_sms import send_sms
+# from ihome.tasks.task_sms import send_sms
+from ihome.tasks.sms.tasks import send_sms
 
 # GET 127.0.0.1/api/v1.0/image_code/<image_code_id>
 
