@@ -5,9 +5,10 @@ from ihome.utils.common import login_required
 from flask import g, current_app, jsonify, request,session
 from ihome.utils.response_code import RET
 
-from ihome.modules import Area, House, Facility, HouseImage, User
+from ihome.modules import Area, House, Facility, HouseImage, User, Order
 from ihome import db, constants, redis_store
 from ihome.utils.image_storage import storage
+from datetime import datetime
 import json
 
 
@@ -328,6 +329,125 @@ def get_house_detail(house_id):
 
     resp = '{"error":"0", "errmsg":"ok", "data": {"user_id": %s, "house":%s}}' % (user_id, json_house), 200, {"Content-Type":"application/json"}
     return resp
+
+# /api/v1.0/houses?sd=2020-07-07&ed=2020-07-11&aid=3&sk=new&p=1
+@api.route("/houses")
+def get_house_list():
+    """获取房屋的列表信息(搜索页面)"""
+    start_date = request.args.get("sd") # 用户想要的起始时间
+    end_date = request.args.get("ed") # 用户想要的结束时间
+    area_id = request.args.get("aid") # 区域编号
+    sort_key = request.args.get("sk") # 排序关键字
+    page = request.args.get('p') # 页数
+
+
+    # 处理时间
+    try:
+        if start_date:
+            start_date = datetime.strptime(start_date, "%Y-%m-%d %H:%M:%S")
+
+        if end_date:
+            end_date = datetime.strptime(end_date, "%Y-%m%-d% %H:%M:%S")
+
+        if start_date and end_date:
+            assert start_date > end_date
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(error=RET.PARAMERR, errmsg="日期参数有误")
+
+    # 判断区域id
+    if area_id:
+        try:
+            area = Area.query.get(area_id)
+        except Exception as e:
+            current_app.logger.error(e)
+            return jsonify(error=RET.PARAMERR, errmsg="区域参数有误")
+
+    # 处理页数
+    try:
+        page = int(page)
+    except Exception as e:
+        current_app.logger.error(e)
+        page=1
+
+    # 过滤条件的参数列表容器
+    filter_params = []
+    # 查询冲突的房子
+    # select * from order where order.begin_date <=end_date or and order.end_date >= start_date
+    # 填充过滤参数
+    conflict_orders = None
+
+    try:
+        if start_date and end_date:
+            # 处理冲突的订单
+            conflict_orders = Order.query.filter(Order.begin_date <= end_date and Order.end_date >= start_date).all()
+        elif start_date:
+            conflict_orders = Order.query.filter(Order.end_date >= start_date).all()
+        elif end_date:
+            conflict_orders = Order.query.filter(Order.begin_date <= end_date).all()
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(error=RET.DBERR, errmsg="查询订单时数据库异常")
+
+    #　从订单中获取冲突的订单id
+    if conflict_orders:
+        conflict_orders_ids = [order.house_id for order in conflict_orders]
+
+        # 如果冲突的房屋id不为空，向查询参数中添加条件
+        if conflict_orders_ids:
+            filter_params.append(House.id.notin_(conflict_orders_ids))
+
+    # 区域条件
+    if area_id:
+        filter_params.append(House.area_id == area_id)
+
+    # 查询数据库
+    # 补充排序条件
+    if sort_key == "booking":
+        house_query = House.query.filter(*filter_params).order_by(House.order_count.desc())
+    elif sort_key == "price-inc":
+        house_query = House.query.filter(*filter_params).order_by(House.price.asc())
+    elif sort_key == "price-des":
+        house_query = House.query.filter(*filter_params).order_by(House.price.desc())
+    else:
+        house_query = House.query.filter(*filter_params).order_by(House.create_time.desc())
+
+    # 处理分页
+    try:
+        #                               当前页数        每页数据量                                   自动的错误输出
+        page_obj = house_query.paginate(page=page, per_page=constants.HOUSE_LIST_PAGE_CAPACITY, error_out=False)
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(error=RET.DBERR, errmsg="查询分页时候数据库异常")
+
+    # 获取页面数据
+    house_li = page_obj.items
+    houses = []
+    for house in house_li:
+        houses.append(house.to_basic_dict())
+
+    # 获取总页数
+    total_page = page_obj.pages
+
+    return jsonify(error=RET.OK, errmsg="ok", data={"total_page":total_page, "houses":houses, "current_page":page})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
