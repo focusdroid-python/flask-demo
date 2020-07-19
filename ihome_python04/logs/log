@@ -2633,3 +2633,16 @@ ERROR houses.py:370 int() argument must be a string or a number, not 'NoneType'
 INFO _internal.py:87 127.0.0.1 - - [12/Jul/2020 12:04:46] "GET /api/v1.0/houses HTTP/1.1" 200 -
 ERROR houses.py:370 int() argument must be a string or a number, not 'NoneType'
 INFO _internal.py:87 127.0.0.1 - - [12/Jul/2020 12:05:27] "GET /api/v1.0/houses HTTP/1.1" 200 -
+INFO _internal.py:87  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:87  * Running on http://192.168.0.108:5000/ (Press CTRL+C to quit)
+INFO _internal.py:87 192.168.0.103 - - [19/Jul/2020 18:23:40] "GET / HTTP/1.1" 404 -
+INFO _internal.py:87 192.168.0.103 - - [19/Jul/2020 18:23:41] "GET /favicon.ico HTTP/1.1" 404 -
+INFO _internal.py:87 192.168.0.103 - - [19/Jul/2020 18:24:11] "GET / HTTP/1.1" 404 -
+INFO _internal.py:87 192.168.0.103 - - [19/Jul/2020 18:24:28] "GET /image_code/6 HTTP/1.1" 404 -
+INFO _internal.py:87 192.168.0.103 - - [19/Jul/2020 18:25:02] "GET /api/v1.0/image_code/6 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.103 - - [19/Jul/2020 18:25:38] "GET /api/v1.0/sms+codes/15701229789 HTTP/1.1" 404 -
+INFO _internal.py:87 192.168.0.103 - - [19/Jul/2020 18:25:54] "GET /api/v1.0/sms_codes/15701229789 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.103 - - [19/Jul/2020 18:26:03] "GET /api/v1.0/sms_codes/15701229789/6 HTTP/1.1" 404 -
+INFO _internal.py:87 192.168.0.103 - - [19/Jul/2020 18:26:32] "GET /api/v1.0/image_code/7 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.103 - - [19/Jul/2020 18:28:37] "GET /api/v1.0/sms_codes/mobild=15701229789?image_code=drda&image_code_id=7 HTTP/1.1" 404 -
+INFO _internal.py:87 192.168.0.103 - - [19/Jul/2020 18:28:37] "GET /api/v1.0/sms_codes/15701229789?image_code=drda&image_code_id=7 HTTP/1.1" 200 -

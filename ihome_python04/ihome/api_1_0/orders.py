@@ -4,9 +4,9 @@ import datetime
 
 from flask import request, g, jsonify, current_app
 from ihome import db, redis_store
-from ihome.utils.commons import login_required
+from ihome.utils.common import login_required
 from ihome.utils.response_code import RET
-from ihome.models import House, Order
+from ihome.modules import House, Order
 from . import api
 
 
@@ -219,7 +219,7 @@ def save_order_comment(order_id):
         redis_store.delete("house_info_%s" % order.house.id)
     except Exception as e:
         current_app.logger.error(e)
-        
+
     return jsonify(error=RET.OK, errmsg="ok")
 
 
