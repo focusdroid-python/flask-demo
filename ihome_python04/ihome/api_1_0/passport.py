@@ -179,5 +179,6 @@ def loginput():
     :return:
     """
     # 清楚session操作
+    # csrf_token = session.get("csrf_token")
     session.clear()
     return jsonify(error=RET.OK, errmsg="OK")
