@@ -1,47 +1,17 @@
 # coding:utf-8
 
+from ihome import create_app, db
+from flask_script import Manager
+from flask_migrate import Migrate, MigrateCommand
 
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
+app = create_app("develop")
+# app = create_app("product")
 
-import redis
-
-
-
-app = Flask(__name__)
-
-
-class Config(object):
-    """配置信息"""
-    DEBUG = True
-
-    SECRET_KEY = "ihjoINBIOJIjuni89789890-00-"
-
-    # 数据库
-    SQLALCHEMY_DATABASE_URL = "mysql://root:mysql@127.0.0.1:3306/ihome_python004"
-    SQLALCHEMY_TRACK_MODIFICATIONS = True
-
-    # redis配置
-    # REDIS_HOST = "127.0.0.1"
-    REDIS_HOST = "192.168.0.108"
-    REDIS_PORT = 6379
-
-# 导入到app中
-app.config.from_object(Config)
-# 创建数据库　db
-db = SQLAlchemy(app)
-
-# 创建redis连接对象
-redis_store = redis.StrictRedis(host=Config.REDIS_HOST, port=Config.REDIS_PORT)
+manager = Manager(app)
+Migrate(app, db)
+manager.add_command("db", MigrateCommand)
 
 
-
-
-@app.route("/index")
-def index():
-    return 'index page'
-
-
-if __name__ == "__main__":
-    app.run()
+if __name__ == '__main__':
+    manager.run()
 

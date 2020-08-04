@@ -3,8 +3,6 @@ import redis
 
 class Config(object):
     '''配置信息'''
-
-
     SECRET_LEY = "AAFEBaegnbsa"
 
     # 数据库

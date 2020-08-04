@@ -5,10 +5,8 @@ from flask_script import Manager
 from flask_cors import CORS
 from flask_migrate import Migrate, MigrateCommand
 
-
 # app = create_app("develop")
 app = create_app("product")
-
 
 manager = Manager(app)
 Migrate(app, db)
