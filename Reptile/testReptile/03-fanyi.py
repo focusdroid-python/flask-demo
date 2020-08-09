@@ -1,0 +1,33 @@
+# -*- coding:utf-8 -*-
+
+import requests
+
+headers = {
+    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36",
+    "cookie": "BIDUPSID=99D3906B2891117DD45F5E491132A0E6; PSTM=1571475292; BAIDUID=99D3906B2891117DC7D702BD4C3AB910:FG=1; REALTIME_TRANS_SWITCH=1; FANYI_WORD_SWITCH=1; HISTORY_SWITCH=1; SOUND_SPD_SWITCH=1; SOUND_PREFER_SWITCH=1; Hm_lvt_afd111fa62852d1f37001d1f980b6800=1588519468; BDUSS=E2T0pZb0k2VWdrN2RoSTAwN2hwWlN0QkN0RER2fmh2cEVMSzF1RUtsRXRhMFpmRVFBQUFBJCQAAAAAAAAAAAEAAABiK9vku-6xpnRyZWVob21lAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC3eHl8t3h5fOW; Hm_lvt_64ecd82404c51e03dc91cb9e8c025574=1596113665; BDSFRCVID=or_OJeC62mcx9uQr5mYaKwX8OgKHpGJTH6ao2gXqXeYkqRmjNPHnEG0PqU8g0Kub5ymwogKK0mOTHv8F_2uxOjjg8UtVJeC6EG0Ptf8g0M5; H_BDCLCKID_SF=tJAfoCK-tCL3fP36q4cEh40jMfT-etJXfKOHMh7F5l8-hR6n25rh0Jj0hJrKBbbvfgOMahnM3hcxOKQphT5JWb_RbJrWbljL2eoTanrN3KJmqfK9bT3v5tj02fcf2-biWbRL2MbdbDnP_IoG2Mn8M4bb3qOpBtQmJeTxoUJ25DnJhhCGe4bK-TrLjNLjtM5; BDORZ=B490B5EBF6F3CD402E515D22BCDA1598; Hm_lpvt_64ecd82404c51e03dc91cb9e8c025574=1596858138; delPer=0; PSINO=2; BDUSS_BFESS=E2T0pZb0k2VWdrN2RoSTAwN2hwWlN0QkN0RER2fmh2cEVMSzF1RUtsRXRhMFpmRVFBQUFBJCQAAAAAAAAAAAEAAABiK9vku-6xpnRyZWVob21lAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC3eHl8t3h5fOW; BDRCVFR[feWj1Vr5u3D]=I67x6TjHwwYf0; H_PS_PSSID=32293_1449_32439_32361_32328_31254_32046_32393_32405_32115_26350_32506_32482"
+}
+
+data = {
+    "from": "en",
+    "to": "zh",
+    "query": "hello",
+    "transtype": "translang",
+    "simple_means_flag": "3",
+    "sign": "54706.276099",
+    "token": "4df0e2d73753ea261214fad1ba5fcbb7",
+    "domain": "common",
+}
+
+post_url = "https://fanyi.baidu.com/v2transapi?from=en&to=zh"
+
+res = requests.post(post_url, data=data, headers=headers)
+datas = res.content.decode()
+file_path = "第1页.json"
+with open(file_path, 'w') as f:
+    f.write(datas)
+
+
+
+
+
+print(res.content.decode())

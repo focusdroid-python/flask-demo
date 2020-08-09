@@ -1,0 +1,38 @@
+# -*- coding:utf-8 -*-
+
+import requests
+import json
+import sys
+
+query_string = sys.argv[1]
+
+headers = {
+    "user-agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1",
+    "cookie": "BIDUPSID=99D3906B2891117DD45F5E491132A0E6; PSTM=1571475292; BAIDUID=99D3906B2891117DC7D702BD4C3AB910:FG=1; REALTIME_TRANS_SWITCH=1; FANYI_WORD_SWITCH=1; HISTORY_SWITCH=1; SOUND_SPD_SWITCH=1; SOUND_PREFER_SWITCH=1; BDUSS=E2T0pZb0k2VWdrN2RoSTAwN2hwWlN0QkN0RER2fmh2cEVMSzF1RUtsRXRhMFpmRVFBQUFBJCQAAAAAAAAAAAEAAABiK9vku-6xpnRyZWVob21lAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC3eHl8t3h5fOW; Hm_lvt_64ecd82404c51e03dc91cb9e8c025574=1596113665; BDSFRCVID=or_OJeC62mcx9uQr5mYaKwX8OgKHpGJTH6ao2gXqXeYkqRmjNPHnEG0PqU8g0Kub5ymwogKK0mOTHv8F_2uxOjjg8UtVJeC6EG0Ptf8g0M5; H_BDCLCKID_SF=tJAfoCK-tCL3fP36q4cEh40jMfT-etJXfKOHMh7F5l8-hR6n25rh0Jj0hJrKBbbvfgOMahnM3hcxOKQphT5JWb_RbJrWbljL2eoTanrN3KJmqfK9bT3v5tj02fcf2-biWbRL2MbdbDnP_IoG2Mn8M4bb3qOpBtQmJeTxoUJ25DnJhhCGe4bK-TrLjNLjtM5; BDORZ=B490B5EBF6F3CD402E515D22BCDA1598; delPer=0; PSINO=2; BDUSS_BFESS=E2T0pZb0k2VWdrN2RoSTAwN2hwWlN0QkN0RER2fmh2cEVMSzF1RUtsRXRhMFpmRVFBQUFBJCQAAAAAAAAAAAEAAABiK9vku-6xpnRyZWVob21lAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC3eHl8t3h5fOW; BDRCVFR[feWj1Vr5u3D]=I67x6TjHwwYf0; H_PS_PSSID=32293_1449_32439_32361_32328_31254_32046_32393_32405_32115_26350_32506_32482; Hm_lvt_afd111fa62852d1f37001d1f980b6800=1596959482; Hm_lpvt_afd111fa62852d1f37001d1f980b6800=1596959482; Hm_lpvt_64ecd82404c51e03dc91cb9e8c025574=1596959483; yjs_js_security_passport=3e609b0f3ac3143acb25ca2b7adbd9ffcf5076ef_1596959491_js"
+}
+
+
+data = {
+    "query": query_string,
+    "from": "en",
+    "to": "zh",
+    "token": "4df0e2d73753ea261214fad1ba5fcbb7",
+    "sign": "394479.190430",
+}
+
+
+post_url = "https://fanyi.baidu.com/basetrans"
+print(data)
+
+res = requests.post(post_url, data=data, headers=headers)
+
+
+print(res.content.decode())
+
+dict_ret = json.loads(res.content.decode())
+
+print(dict_ret)
+
+ret = dict_ret["trans"][0]["dst"]
+print('*'*300)
+print(ret)
