@@ -70,3 +70,19 @@ DEBUG demo.py:18 flask curent_app debug
 WARNING _internal.py:87  * Debugger is active!
 WARNING _internal.py:87  * Debugger is active!
 WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+ERROR demo.py:15 flask curent_app error
+WARNING demo.py:16 flask curent_app warn
+INFO demo.py:17 flask curent_app info
+DEBUG demo.py:18 flask curent_app debug
+ERROR demo.py:15 flask curent_app error
+WARNING demo.py:16 flask curent_app warn
+INFO demo.py:17 flask curent_app info
+DEBUG demo.py:18 flask curent_app debug
+ERROR demo.py:15 flask curent_app error
+WARNING demo.py:16 flask curent_app warn
+INFO demo.py:17 flask curent_app info
+DEBUG demo.py:18 flask curent_app debug
+WARNING _internal.py:87  * Debugger is active!
+ERROR __init__.py:98 Error: Directory migrations already exists
+WARNING _internal.py:87  * Debugger is active!
