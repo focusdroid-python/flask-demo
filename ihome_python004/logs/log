@@ -7,3 +7,167 @@ WARNING demo.py:10 warn manager
 INFO demo.py:11 info manager
 DEBUG demo.py:12 debug manager
 INFO _internal.py:87 127.0.0.1 - - [18/Sep/2020 22:56:40] "GET /api/v1.0/index HTTP/1.1" 200 -
+INFO _internal.py:87  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87  * Detected change in '/home/focusdroid/flask/ihome_python004/ihome/api_1_0/demo.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87  * Detected change in '/home/focusdroid/flask/ihome_python004/ihome/modules.py', reloading
+INFO _internal.py:87  * Restarting with stat
+INFO _internal.py:87  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87  * Running on http://192.168.0.108:5000/ (Press CTRL+C to quit)
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87 192.168.0.105 - - [22/Sep/2020 21:58:11] "GET /api/v_1_0/index HTTP/1.1" 404 -
+INFO _internal.py:87 192.168.0.105 - - [22/Sep/2020 21:58:11] "GET /favicon.ico HTTP/1.1" 404 -
+INFO _internal.py:87 192.168.0.105 - - [22/Sep/2020 21:58:20] "GET /api_1_0/index HTTP/1.1" 404 -
+INFO _internal.py:87 192.168.0.105 - - [22/Sep/2020 21:58:22] "GET /api_1_0/index HTTP/1.1" 404 -
+ERROR demo.py:9 error manager
+WARNING demo.py:10 warn manager
+INFO demo.py:11 info manager
+DEBUG demo.py:12 debug manager
+INFO _internal.py:87 192.168.0.105 - - [22/Sep/2020 21:59:25] "GET /api/v1.0/index HTTP/1.1" 200 -
+ERROR demo.py:9 error manager
+WARNING demo.py:10 warn manager
+INFO demo.py:11 info manager
+DEBUG demo.py:12 debug manager
+INFO _internal.py:87 192.168.0.105 - - [22/Sep/2020 21:59:28] "GET /api/v1.0/index HTTP/1.1" 200 -
+ERROR demo.py:9 error manager
+WARNING demo.py:10 warn manager
+INFO demo.py:11 info manager
+DEBUG demo.py:12 debug manager
+INFO _internal.py:87 192.168.0.105 - - [22/Sep/2020 21:59:32] "GET /api/v1.0/index HTTP/1.1" 200 -
+INFO _internal.py:87  * Detected change in '/home/focusdroid/flask/ihome_python004/ihome/__init__.py', reloading
+INFO _internal.py:87  * Restarting with stat
+INFO _internal.py:87  * Running on http://192.168.0.108:5000/ (Press CTRL+C to quit)
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+ERROR demo.py:9 error manager
+WARNING demo.py:10 warn manager
+INFO demo.py:11 info manager
+DEBUG demo.py:12 debug manager
+INFO _internal.py:87 192.168.0.105 - - [22/Sep/2020 22:24:01] "GET /api/v1.0/index HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.105 - - [22/Sep/2020 22:25:03] "POST /api/v1.0/orders/payment HTTP/1.1" 405 -
+INFO _internal.py:87 192.168.0.105 - - [22/Sep/2020 22:25:03] "POST /api/v1.0/orders/payment HTTP/1.1" 405 -
+INFO _internal.py:87 192.168.0.105 - - [22/Sep/2020 22:25:03] "POST /api/v1.0/orders/payment HTTP/1.1" 405 -
+INFO _internal.py:87 192.168.0.105 - - [22/Sep/2020 22:25:03] "POST /api/v1.0/orders/payment HTTP/1.1" 405 -
+INFO _internal.py:87  * Detected change in '/home/focusdroid/flask/ihome_python004/ihome/web_html.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87  * Detected change in '/home/focusdroid/flask/ihome_python004/ihome/web_html.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87  * Running on http://192.168.0.108:5000/ (Press CTRL+C to quit)
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+ERROR demo.py:9 error manager
+WARNING demo.py:10 warn manager
+INFO demo.py:11 info manager
+DEBUG demo.py:12 debug manager
+INFO _internal.py:87 192.168.0.105 - - [24/Sep/2020 21:40:06] "GET /api/v1.0/index HTTP/1.1" 200 -
+ERROR demo.py:9 error manager
+WARNING demo.py:10 warn manager
+INFO demo.py:11 info manager
+DEBUG demo.py:12 debug manager
+INFO _internal.py:87 192.168.0.105 - - [24/Sep/2020 21:40:33] "GET /api/v1.0/index HTTP/1.1" 200 -
+INFO _internal.py:87  * Detected change in '/home/focusdroid/flask/ihome_python004/ihome/api_1_0/demo.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87  * Detected change in '/home/focusdroid/flask/ihome_python004/ihome/web_html.py', reloading
+INFO _internal.py:87  * Restarting with stat
+INFO _internal.py:87  * Running on http://192.168.0.108:5000/ (Press CTRL+C to quit)
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+ERROR demo.py:10 error manager
+WARNING demo.py:11 warn manager
+INFO demo.py:12 info manager
+DEBUG demo.py:13 debug manager
+INFO _internal.py:87 192.168.0.105 - - [24/Sep/2020 21:43:11] "GET /api/v1.0/index HTTP/1.1" 200 -
+INFO _internal.py:87  * Detected change in '/home/focusdroid/flask/ihome_python004/ihome/api_1_0/demo.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87  * Running on http://192.168.0.108:5000/ (Press CTRL+C to quit)
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+ERROR demo.py:10 error manager
+WARNING demo.py:11 warn manager
+INFO demo.py:12 info manager
+DEBUG demo.py:13 debug manager
+INFO _internal.py:87 192.168.0.105 - - [24/Sep/2020 21:57:48] "GET /api/v1.0/index HTTP/1.1" 200 -
+ERROR demo.py:10 error manager
+WARNING demo.py:11 warn manager
+INFO demo.py:12 info manager
+DEBUG demo.py:13 debug manager
+INFO _internal.py:87 192.168.0.105 - - [24/Sep/2020 21:57:56] "GET /api/v1.0/index HTTP/1.1" 200 -
+INFO _internal.py:87  * Detected change in '/home/focusdroid/flask/ihome_python004/ihome/api_1_0/__init__.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87  * Detected change in '/home/focusdroid/flask/ihome_python004/ihome/api_1_0/verify_code.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87 192.168.0.105 - - [24/Sep/2020 22:47:35] "GET /api/v1.0/get_image_code HTTP/1.1" 200 -
+INFO _internal.py:87  * Detected change in '/home/focusdroid/flask/ihome_python004/ihome/api_1_0/verify_code.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87  * Detected change in '/home/focusdroid/flask/ihome_python004/ihome/api_1_0/verify_code.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87  * Detected change in '/home/focusdroid/flask/ihome_python004/ihome/api_1_0/verify_code.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
