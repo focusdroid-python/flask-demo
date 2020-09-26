@@ -1,7 +1,5 @@
 # -*- coding:utf-8 -*-
-
 from lxml import etree
-
 
 text = '''
     <section id="list" class="grid">
@@ -15,7 +13,7 @@ text = '''
 
     <div class="info">
         <h4></h4>
-        <h3>假面饭店 </h3>
+        <h3> </h3>
         <p class="rank">
                     <span class="rating-stars" data-rating="3.2"><span class="rating-star rating-star-small-full"></span><span class="rating-star rating-star-small-full"></span><span class="rating-star rating-star-small-full"></span><span class="rating-star rating-star-small-gray"></span><span class="rating-star rating-star-small-gray"></span></span> <span>6.4</span>
         </p>
@@ -30,7 +28,6 @@ text = '''
             
         </div>
     </div>
-
     <div class="info">
         <h4></h4>
         <h3>小妇人 </h3>
@@ -99,7 +96,28 @@ text = '''
 '''
 
 html = etree.HTML(text)
-print(html)
-# 查看element对象中包含的字符串
-print(etree.toString(html).decode())
 
+# print(html.tag)
+# 查看element对象中包含的字符串
+# print(etree.tostring(html, encoding="UTF-8").decode())
+# rettitle = html.xpath("//a[@class='item']//div[@class='info']/h3/text()")
+#
+# print(rettitle)
+# ret = html.xpath("//a[@class='item']//p[@class='meta']/text()")
+# print(ret)
+#
+# # 每一条新闻，把url和文本组成字典
+# for txt in ret:
+#     item = {}
+#     item['star'] = txt
+#     item['title'] = rettitle.index()
+#     print(item)
+
+ret3 = html.xpath("//a[@class='item']")
+print(ret3)
+
+for i in ret3:
+    item = {}
+    item["title"] = i.xpath(".//div[@class='info']/h3/text()")[0] if len(i.xpath("//div[@class='info']/h3/text()")) > 0 else None
+    item["star"] = i.xpath(".//p[@class='meta']/text()")[0] if len("//p[@class='meta']/text()") > 0 else None
+    print(item)
