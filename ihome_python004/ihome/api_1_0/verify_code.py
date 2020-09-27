@@ -1,9 +1,9 @@
 # -*- coding:utf-8 -*-
 from . import api
-from ihome.utils.captcha import captcha
+from ihome.utils.captcha.captcha import captcha
 from ihome.utils.response_code import RET
 from ihome import redis_store, constants
-from falsk import current_app, jsonify, make_response
+from flask import current_app, jsonify, make_response
 
 @api.route("/get_image_code/<image_code_id>")
 def get_image_code(image_code_id):
