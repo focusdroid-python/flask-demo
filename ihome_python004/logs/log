@@ -390,3 +390,76 @@ INFO _internal.py:87 192.168.0.105 - - [27/Sep/2020 21:15:17] "GET /api/v1.0/get
 INFO _internal.py:87 192.168.0.105 - - [27/Sep/2020 21:15:17] "GET /api/v1.0/get_image_code/93 HTTP/1.1" 200 -
 INFO _internal.py:87 192.168.0.105 - - [27/Sep/2020 21:15:17] "GET /api/v1.0/get_image_code/98 HTTP/1.1" 200 -
 INFO _internal.py:87 192.168.0.105 - - [27/Sep/2020 21:15:21] "GET /api/v1.0/get_image_code/60 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.108 - - [27/Sep/2020 22:22:05] "GET /api/v_1_0/get_image_code/2 HTTP/1.1" 404 -
+INFO _internal.py:87 192.168.0.108 - - [27/Sep/2020 22:22:05] "GET /favicon.ico HTTP/1.1" 404 -
+INFO _internal.py:87 192.168.0.108 - - [27/Sep/2020 22:22:21] "GET /api/v1.0/get_image_code/2 HTTP/1.1" 200 -
+INFO _internal.py:87  * Detected change in '/home/focusdroid/flask/ihome_python004/ihome/api_1_0/verify_code.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87  * Running on http://192.168.0.108:5000/ (Press CTRL+C to quit)
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87 192.168.0.108 - - [27/Sep/2020 22:22:50] "GET /api/v1.0/get_image_code/2 HTTP/1.1" 200 -
+INFO _internal.py:87  * Detected change in '/home/focusdroid/flask/ihome_python004/ihome/api_1_0/verify_code.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87  * Running on http://192.168.0.108:5000/ (Press CTRL+C to quit)
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87 192.168.0.108 - - [27/Sep/2020 22:23:14] "GET /api/v1.0/get_image_code/2 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.108 - - [27/Sep/2020 22:23:18] "GET /api/v1.0/get_image_code/2 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.108 - - [27/Sep/2020 22:23:19] "GET /api/v1.0/get_image_code/2 HTTP/1.1" 200 -
+INFO _internal.py:87  * Detected change in '/home/focusdroid/flask/ihome_python004/ihome/api_1_0/verify_code.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87 192.168.0.108 - - [27/Sep/2020 22:23:33] "GET /api/v1.0/get_image_code/2 HTTP/1.1" 200 -
+INFO _internal.py:87  * Detected change in '/home/focusdroid/flask/ihome_python004/ihome/api_1_0/verify_code.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87  * Detected change in '/home/focusdroid/flask/ihome_python004/ihome/api_1_0/verify_code.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87  * Detected change in '/home/focusdroid/flask/ihome_python004/ihome/api_1_0/verify_code.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87  * Detected change in '/home/focusdroid/flask/ihome_python004/ihome/api_1_0/verify_code.py', reloading
+INFO _internal.py:87  * Restarting with stat
+INFO _internal.py:87  * Running on http://192.168.0.108:5000/ (Press CTRL+C to quit)
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87 192.168.0.100 - - [27/Sep/2020 22:31:36] "GET /api/v1.0/get_image_code/1 HTTP/1.1" 200 -
+INFO _internal.py:87  * Detected change in '/home/focusdroid/flask/ihome_python004/ihome/api_1_0/verify_code.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87 192.168.0.108 - - [27/Sep/2020 22:33:51] "GET /api/v1.0/get_image_code/2 HTTP/1.1" 500 -
+INFO _internal.py:87 192.168.0.108 - - [27/Sep/2020 22:33:51] "GET /api/v1.0/get_image_code/2?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.108 - - [27/Sep/2020 22:33:51] "GET /api/v1.0/get_image_code/2?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.108 - - [27/Sep/2020 22:33:51] "GET /api/v1.0/get_image_code/2?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.108 - - [27/Sep/2020 22:33:52] "GET /api/v1.0/get_image_code/2?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.108 - - [27/Sep/2020 22:33:52] "GET /api/v1.0/get_image_code/2?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO _internal.py:87  * Detected change in '/home/focusdroid/flask/ihome_python004/ihome/api_1_0/verify_code.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87 192.168.0.108 - - [27/Sep/2020 22:34:11] "GET /api/v1.0/get_image_code/2 HTTP/1.1" 200 -
+INFO _internal.py:87  * Detected change in '/home/focusdroid/flask/ihome_python004/ihome/api_1_0/verify_code.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87  * Detected change in '/home/focusdroid/flask/ihome_python004/ihome/api_1_0/verify_code.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87 192.168.0.105 - - [29/Sep/2020 20:39:38] "GET /favicon.ico HTTP/1.1" 404 -
+INFO _internal.py:87 192.168.0.105 - - [29/Sep/2020 20:39:38] "GET /api/v1.0/get_image_code/84 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.105 - - [29/Sep/2020 20:39:38] "GET /register HTTP/1.1" 404 -
