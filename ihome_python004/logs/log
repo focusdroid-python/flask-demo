@@ -570,3 +570,109 @@ WARNING _internal.py:87  * Debugger is active!
 INFO _internal.py:87  * Debugger PIN: 140-095-645
 INFO _internal.py:87  * Detected change in '/home/focusdroid/flask/ihome_python004/ihome/api_1_0/verify_code.py', reloading
 INFO _internal.py:87  * Restarting with stat
+INFO _internal.py:87  * Running on http://192.168.0.108:5000/ (Press CTRL+C to quit)
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87 192.168.0.108 - - [13/Oct/2020 20:59:57] "GET /api/v1.0//get_image_code/15701229789 HTTP/1.1" 404 -
+INFO _internal.py:87 192.168.0.108 - - [13/Oct/2020 21:00:14] "GET /api/v1.0/get_image_code/15701229789 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.108 - - [13/Oct/2020 21:00:40] "GET /api/v1.0/get_image_code/15701229789?image_code_id&image_code HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.105 - - [13/Oct/2020 21:02:09] "GET /api/v1.0/get_image_code/98 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.105 - - [13/Oct/2020 21:02:17] "GET /api/v1.0/get_image_code/2 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.105 - - [13/Oct/2020 21:02:19] "GET /api/v1.0/get_image_code/12 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.105 - - [13/Oct/2020 21:02:22] "GET /api/v1.0/get_image_code/46 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.105 - - [13/Oct/2020 21:03:02] "GET /api/v1.0/get_image_code/84 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.105 - - [13/Oct/2020 21:04:21] "GET /api/v1.0/get_image_code/15 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.108 - - [13/Oct/2020 21:05:27] "GET /api/v1.0/get_image_code/15701229789?image_code_id=694b1041-0881-446f-98c4-33e04faea6c7&image_code=OLIY HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.108 - - [13/Oct/2020 21:06:04] "GET /api/v1.0/sms_codes/15701229789?image_code_id=694b1041-0881-446f-98c4-33e04faea6c7&image_code=OLIY HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.108 - - [13/Oct/2020 21:06:50] "GET /api/v1.0/sms_codes/15701229789?image_code_id=c5f547d3-6785-488b-a587-10b6b27ac476&image_code=YMCB HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.105 - - [13/Oct/2020 21:08:05] "GET /api/v1.0/get_image_code/3 HTTP/1.1" 200 -
+INFO _internal.py:87  * Detected change in '/home/focusdroid/flask/ihome_python004/ihome/api_1_0/verify_code.py', reloading
+INFO _internal.py:87  * Restarting with stat
+INFO _internal.py:87  * Running on http://192.168.0.108:5000/ (Press CTRL+C to quit)
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87 192.168.0.105 - - [13/Oct/2020 21:18:58] "GET /api/v1.0/get_image_code/81 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.108 - - [13/Oct/2020 21:19:28] "GET /api/v1.0/sms_codes/15701229789?image_code_id=694b1041-0881-446f-98c4-33e04faea6c7&image_code=YMCB HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.108 - - [13/Oct/2020 21:19:39] "GET /api/v1.0/sms_codes/15701229789?image_code_id=694b1041-0881-446f-98c4-33e04faea6c7&image_code=YMCB HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.108 - - [13/Oct/2020 21:19:44] "GET /api/v1.0/sms_codes/15701229789?image_code_id=694b1041-0881-446f-98c4-33e04faea6c7&image_code=YMCB HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.105 - - [13/Oct/2020 21:20:05] "GET /api/v1.0/get_image_code/19 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.105 - - [13/Oct/2020 21:20:10] "GET /api/v1.0/get_image_code/95 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.108 - - [13/Oct/2020 21:20:52] "GET /api/v1.0/sms_codes/15701229789?image_code_id=694b1041-0881-446f-98c4-33e04faea6c7&image_code=YMCB HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.105 - - [13/Oct/2020 21:21:29] "GET /api/v1.0/get_image_code/54 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.108 - - [13/Oct/2020 21:22:05] "GET /api/v1.0/sms_codes/15701229789?image_code_id=c5f547d3-6785-488b-a587-10b6b27ac476&image_code=MLSC HTTP/1.1" 200 -
+INFO _internal.py:87  * Detected change in '/home/focusdroid/flask/ihome_python004/ihome/api_1_0/verify_code.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87  * Detected change in '/home/focusdroid/flask/ihome_python004/ihome/api_1_0/verify_code.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87  * Detected change in '/home/focusdroid/flask/ihome_python004/ihome/api_1_0/verify_code.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87  * Detected change in '/home/focusdroid/flask/ihome_python004/ihome/api_1_0/verify_code.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87  * Detected change in '/home/focusdroid/flask/ihome_python004/ihome/api_1_0/verify_code.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87  * Detected change in '/home/focusdroid/flask/ihome_python004/ihome/api_1_0/verify_code.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87  * Running on http://192.168.0.108:5000/ (Press CTRL+C to quit)
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87 192.168.0.105 - - [13/Oct/2020 21:40:32] "GET /api/v1.0/get_image_code/64 HTTP/1.1" 200 -
+ERROR verify_code.py:137 send_template_sms() takes exactly 4 arguments (3 given)
+INFO _internal.py:87 192.168.0.108 - - [13/Oct/2020 21:41:28] "GET /api/v1.0/sms_codes/15701229789?image_code_id=64&image_code=UPSP HTTP/1.1" 200 -
+INFO _internal.py:87  * Detected change in '/home/focusdroid/flask/ihome_python004/ihome/api_1_0/verify_code.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87 192.168.0.105 - - [13/Oct/2020 21:42:13] "GET /api/v1.0/get_image_code/90 HTTP/1.1" 200 -
+ERROR verify_code.py:136 send_template_sms() takes exactly 4 arguments (3 given)
+INFO _internal.py:87 192.168.0.108 - - [13/Oct/2020 21:42:37] "GET /api/v1.0/sms_codes/15701229789?image_code_id=90&image_code=M8LJ HTTP/1.1" 500 -
+INFO _internal.py:87  * Detected change in '/home/focusdroid/flask/ihome_python004/ihome/api_1_0/verify_code.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87  * Running on http://192.168.0.108:5000/ (Press CTRL+C to quit)
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87 192.168.0.105 - - [13/Oct/2020 21:43:51] "GET /api/v1.0/get_image_code/54 HTTP/1.1" 200 -
+ERROR verify_code.py:137 send_template_sms() takes exactly 4 arguments (3 given)
+INFO _internal.py:87 192.168.0.108 - - [13/Oct/2020 21:44:14] "GET /api/v1.0/sms_codes/15701229789?image_code_id=54&image_code=ZUHM HTTP/1.1" 200 -
+INFO _internal.py:87  * Detected change in '/home/focusdroid/flask/ihome_python004/ihome/api_1_0/verify_code.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87  * Detected change in '/home/focusdroid/flask/ihome_python004/ihome/api_1_0/verify_code.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87  * Running on http://192.168.0.108:5000/ (Press CTRL+C to quit)
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87 192.168.0.105 - - [13/Oct/2020 21:45:54] "GET /api/v1.0/get_image_code/76 HTTP/1.1" 200 -
+ERROR verify_code.py:136 send_template_sms() takes exactly 4 arguments (3 given)
+INFO _internal.py:87 192.168.0.108 - - [13/Oct/2020 21:46:28] "GET /api/v1.0/sms_codes/15701229789?image_code_id=76&image_code=ZFQH HTTP/1.1" 500 -
+INFO _internal.py:87  * Detected change in '/home/focusdroid/flask/ihome_python004/ihome/api_1_0/verify_code.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87  * Running on http://192.168.0.108:5000/ (Press CTRL+C to quit)
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87 192.168.0.105 - - [13/Oct/2020 21:47:19] "GET /api/v1.0/get_image_code/95 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.108 - - [13/Oct/2020 21:47:44] "GET /api/v1.0/sms_codes/15701229789?image_code_id=95&image_code=RPPQ HTTP/1.1" 200 -
