@@ -1,4 +1,4 @@
-# --*-- coding:utf-8 --*--
+# -*- coding:UTF-8 -*-
 from datetime import datetime
 from . import db
 from ihome import constants
@@ -15,7 +15,7 @@ class User(BaseModel,db.Model):
 
     id=db.Column(db.Integer,primary_key=True)  # 用户编号
     name=db.Column(db.String(32),unique=True,nullable=False) # 用户昵称
-    password=db.Column(db.String(128),nullable=False) # 加密的密码
+    password_hash=db.Column(db.String(128),nullable=False) # 加密的密码
     mobile=db.Column(db.String(11),unique=True,nullable=False) # 手机号
     real_name=db.Column(db.String(32))  # 真实姓名
     id_card=db.Column(db.String(20))  # 身份证号

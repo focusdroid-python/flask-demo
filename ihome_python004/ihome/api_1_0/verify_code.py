@@ -7,7 +7,6 @@ from flask import current_app, jsonify, make_response, request
 from ihome.modules import User
 from ihome.yuntongxun.sms import CCP
 import random
-import base64
 
 
 @api.route("/get_image_code")
