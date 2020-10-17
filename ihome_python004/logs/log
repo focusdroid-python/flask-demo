@@ -1077,3 +1077,4 @@ INFO _internal.py:87  * Detected change in '/home/focusdroid/flask/ihome_python0
 INFO _internal.py:87  * Restarting with stat
 ERROR __init__.py:98 Error: Directory migrations already exists
 ERROR __init__.py:98 Error: Directory migrations already exists
+ERROR __init__.py:98 Error: Path doesn't exist: 'migrations'.  Please use the 'init' command to create a new scripts folder.

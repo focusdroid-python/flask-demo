@@ -1,9 +1,10 @@
 # -*- coding:utf-8 -*-
 from . import api
-from flask import request, current_app, jsonify
+from flask import request, current_app, jsonify, session
 from ihome.utils.response_code import RET
-from ihome import redis_store
+from ihome import redis_store, db
 from ihome.modules import User
+from sqlalchemy.exc import IntegrityError
 import re
 
 
@@ -55,19 +56,41 @@ def register():
         return jsonify(errno=RET.DBERR, errmsg="短信验证码错误")
 
     # 判断用户手机号是否被注册过
-    try:
-        user = User.query.filter_by(mobile=mobile).first()
-    except Exception as e:
-        current_app.logger.error(e)
-        return jsonify(errno=RET.DBERR, errmsg="数据库异常")
-    else:
-        if user is not None:
-            # 表示手机号已经存在
-            return jsonify(errno=RET.DATAEXIST, errmsg="手机号已存在")
+    # try:
+    #     user = User.query.filter_by(mobile=mobile).first()
+    # except Exception as e:
+    #     current_app.logger.error(e)
+    #     return jsonify(errno=RET.DBERR, errmsg="数据库异常")
+    # else:
+    #     if user is not None:
+    #         # 表示手机号已经存在
+    #         return jsonify(errno=RET.DATAEXIST, errmsg="手机号已存在")
 
     # 保护用户的注册数据提交到数据库中
+    user = User(name=mobile, password=password, mobile=mobile)
+    user.generate_password_hash(password)
+    try:
+        db.session.add(user)
+        db.session.commit()
+    except IntegrityError as e:
+        # IntegrityError 捕获具体的
+        # 表示手机号出现重复值，即手机号已经被注册过
+        # 操作错误的回滚，回滚上一次提交的状态
+        db.session.rollback()
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DATAEXIST, errmsg="手机号已存在")
+    except Exception as e:
+        # 操作错误的回滚，回滚上一次提交的状态
+        db.session.rollback()
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg="查询数据库异常")
 
     # 并保存登录状态在session中
+    session["name"] = mobile
+    session["mobile"] = mobile
+    session["user_id"] = user.id
+    # 返回结果
+    return jsonify(errno=RET.OK, errmsg="注册成功")
 
 
 

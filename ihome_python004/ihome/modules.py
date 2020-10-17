@@ -2,7 +2,7 @@
 from datetime import datetime
 from . import db
 from ihome import constants
-from werkzeug.security import generate_password_hash,check_password_hash
+from werkzeug.security import generate_password_hash
 
 class BaseModel(object):
     """模型基类"""
@@ -15,7 +15,7 @@ class User(BaseModel,db.Model):
 
     id=db.Column(db.Integer,primary_key=True)  # 用户编号
     name=db.Column(db.String(32),unique=True,nullable=False) # 用户昵称
-    password_hash=db.Column(db.String(128),nullable=False) # 加密的密码
+    password=db.Column(db.String(128),nullable=False) # 加密的密码
     mobile=db.Column(db.String(11),unique=True,nullable=False) # 手机号
     real_name=db.Column(db.String(32))  # 真实姓名
     id_card=db.Column(db.String(20))  # 身份证号
@@ -24,44 +24,11 @@ class User(BaseModel,db.Model):
     orders=db.relationship('Order',backref='user',lazy='dynamic') # 用户下的订单
 
 
-    #　读取属性时被调用
-    # 加上property装饰器后，会把函数变为属性，属性名即为函数名
     @property
-    def password(self):
-        """读取属性的函数行为"""
-        # 函数的返回值会作为属性值
-        # return "xxxx"
-        raise AttributeError("这个属性只能设置不能读取")
-    # 使用这个装饰器，对应设置属性操作
-    @password.setter
-    def password(self, value):
-        """
-        设置属性　user.password = "xxxx"
-        :param value:设置属性时的数据  value就是”xxxx“, 原始的明文密码
-        :return:
-        """
-        self.password_hash = generate_password_hash(value)
-
-
-
-        # `def generate_password_hash(self, origin_password):
-        #     """对密码进行加密"""
-        #     self.password_hash = generate_password_hash(origin_password)
-
-
-
-    @property
-    def password_hash(self):
-        raise AttributeError(u'不能访问该属性')
-
-    @password_hash.setter
-    def password_hash(self,value):
-        # 生成hash密码
-        self.password=generate_password_hash(value)
-
-    def check_password(self,password):
-        # 校验密码是否正确
-        return check_password_hash(self.password, password)
+    def generate_password_hash(self, origin_password): # werlzeug提供的加密函数
+        """对密码进行加密"""
+        # 直接将加密后的密码给password
+        self.password = generate_password_hash(origin_password)
 
     def to_dict(self):
         # 返回一个用户信息字典接口，使外界方便调用
