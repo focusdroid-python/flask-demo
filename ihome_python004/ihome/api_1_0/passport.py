@@ -20,7 +20,7 @@ def register():
     mobile = req_dict.get("mobile")
     sms_code = req_dict.get("sms_code")
     password = req_dict.get("password")
-    confirmPassword = req_dict.get("confirmPassword")
+    password2 = req_dict.get("password2")
 
     # 校验参数
     if not all([mobile, sms_code, password]):
@@ -31,7 +31,7 @@ def register():
         return jsonify(errno=RET.PARAERR, errmsg="手机号格式错误")
 
     # 判断两次密码是否输入一致
-    if password != confirmPassword:
+    if password != password2:
         return jsonify(errno=RET.PARAERR, errmsg="两次密码输入不一致")
 
     # 从redis取出短信验证码
@@ -68,7 +68,9 @@ def register():
 
     # 保护用户的注册数据提交到数据库中
     user = User(name=mobile, password=password, mobile=mobile)
-    user.generate_password_hash(password)
+    # user.generate_password_hash(password)
+    # user.password = password
+
     try:
         db.session.add(user)
         db.session.commit()

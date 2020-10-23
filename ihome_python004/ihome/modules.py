@@ -23,12 +23,32 @@ class User(BaseModel,db.Model):
     houses=db.relationship('House',backref='user',lazy='dynamic') # 用户发布的房屋
     orders=db.relationship('Order',backref='user',lazy='dynamic') # 用户下的订单
 
+    # # 加上property装饰器后，会把函数变为属性，属性名即为函数名 ***密码进行加密时候出现问题　RuntimeError: maximum recursion depth exceeded　超过最大递归深度***
+    # @property
+    # def password(self):
+    #     """读取属性的函数行为"""
+    #     return self.password
+    #     # raise AttributeError("这个属性只能设置不能读取")
+    #
+    # @password.setter # 用password　设置属性操作
+    # def password(self, value):
+    #     """
+    #     设置属性　　user.passowrd = "xxxxxx"
+    #     :param value:　设置属性时的数据 value就是原始明文密码
+    #     :return:
+    #     """
+    #     # print(self.password)
+    #     print(value)
+    #     # print(generate_password_hash(value))
+    #     # self.password = generate_password_hash(value) # 暂时密码加密出现问题，暂时不加密进行存储
+    #     self.password = value
 
-    @property
-    def generate_password_hash(self, origin_password): # werlzeug提供的加密函数
-        """对密码进行加密"""
-        # 直接将加密后的密码给password
-        self.password = generate_password_hash(origin_password)
+
+    # @property
+    # def generate_password_hash(self, origin_password): # werlzeug提供的加密函数
+    #     """对密码进行加密"""
+    #     # 直接将加密后的密码给password
+    #     self.password = generate_password_hash(origin_password)
 
     def to_dict(self):
         # 返回一个用户信息字典接口，使外界方便调用
