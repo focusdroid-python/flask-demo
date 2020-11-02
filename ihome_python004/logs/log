@@ -1419,3 +1419,66 @@ INFO _internal.py:87 192.168.0.105 - - [23/Oct/2020 22:13:00] "GET /api/v1.0/get
 INFO _internal.py:87 192.168.0.105 - - [23/Oct/2020 22:13:09] "GET /api/v1.0/get_image_code?image_code_id=20849254810982 HTTP/1.1" 200 -
 INFO _internal.py:87 192.168.0.105 - - [23/Oct/2020 22:13:36] "GET /api/v1.0/sms_codes?image_code_id=20849254810982&image_code=fgji&mobile=15701229789 HTTP/1.1" 200 -
 INFO _internal.py:87 192.168.0.105 - - [23/Oct/2020 22:13:51] "GET /api/v1.0/sms_codes?image_code_id=20849254810982&image_code=fgji&mobile=15701229789 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.105 - - [23/Oct/2020 22:23:49] "GET /api/v1.0/get_image_code?image_code_id=68097051472594 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.105 - - [23/Oct/2020 22:24:04] "GET /api/v1.0/get_image_code?image_code_id=77577783133728 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.105 - - [23/Oct/2020 22:24:05] "GET /api/v1.0/get_image_code?image_code_id=94645225640830 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.105 - - [23/Oct/2020 22:30:46] "GET /api/v1.0/get_image_code?image_code_id=53815789574244 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.105 - - [25/Oct/2020 19:01:06] "GET /api/v1.0/get_image_code?image_code_id=62800383902979 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.105 - - [26/Oct/2020 18:40:31] "GET /register HTTP/1.1" 404 -
+INFO _internal.py:87  * Detected change in '/home/focusdroid/flask/ihome_python004/ihome/__init__.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87 192.168.0.105 - - [02/Nov/2020 21:36:13] "GET /api/v1.0/get_image_code?image_code_id=3373439622871 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.105 - - [02/Nov/2020 21:36:17] "GET /api/v1.0/get_image_code?image_code_id=30121419169104 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.105 - - [02/Nov/2020 21:36:25] "GET /api/v1.0/get_image_code?image_code_id=78479442338160 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.105 - - [02/Nov/2020 21:43:27] "GET /api/v1.0/get_image_code?image_code_id=46010471919559 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.105 - - [02/Nov/2020 21:45:38] "GET /api/v1.0/get_image_code?image_code_id=74887220973049 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.105 - - [02/Nov/2020 21:52:47] "GET /api/v1.0/get_image_code?image_code_id=85267208343377 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.105 - - [02/Nov/2020 21:53:06] "GET /api/v1.0/get_image_code?image_code_id=28528166662058 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.105 - - [02/Nov/2020 21:53:30] "GET /api/v1.0/get_image_code?image_code_id=60254088334741 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.105 - - [02/Nov/2020 21:53:39] "GET /api/v1.0/get_image_code?image_code_id=43326025227917 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.105 - - [02/Nov/2020 21:53:41] "GET /api/v1.0/get_image_code?image_code_id=17625088961508 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.105 - - [02/Nov/2020 21:54:05] "GET /api/v1.0/get_image_code?image_code_id=16500530214533 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.105 - - [02/Nov/2020 21:54:08] "GET /api/v1.0/get_image_code?image_code_id=45784538669141 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.105 - - [02/Nov/2020 21:54:28] "GET /api/v1.0/get_image_code?image_code_id=61324710356077 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.105 - - [02/Nov/2020 21:54:30] "GET /api/v1.0/get_image_code?image_code_id=58667529086627 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.105 - - [02/Nov/2020 21:54:30] "GET /api/v1.0/get_image_code?image_code_id=85465770661467 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.105 - - [02/Nov/2020 21:55:01] "GET /api/v1.0/sms_codes?image_code_id=85465770661467&image_code=kfof&mobile=18122222222 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.105 - - [02/Nov/2020 21:55:07] "GET /api/v1.0/get_image_code?image_code_id=34806288645820 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.105 - - [02/Nov/2020 21:55:08] "GET /api/v1.0/get_image_code?image_code_id=83996245689307 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.105 - - [02/Nov/2020 21:55:09] "GET /api/v1.0/get_image_code?image_code_id=62006170670666 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.105 - - [02/Nov/2020 21:55:10] "GET /api/v1.0/get_image_code?image_code_id=94271407953239 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.105 - - [02/Nov/2020 21:55:17] "GET /api/v1.0/sms_codes?image_code_id=94271407953239&image_code=kbvb&mobile=18122222222 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.105 - - [02/Nov/2020 21:55:26] "GET /api/v1.0/get_image_code?image_code_id=38821505847296 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.105 - - [02/Nov/2020 21:55:27] "GET /api/v1.0/get_image_code?image_code_id=40011451630252 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.105 - - [02/Nov/2020 21:55:29] "GET /api/v1.0/get_image_code?image_code_id=89154968410912 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.105 - - [02/Nov/2020 21:55:30] "GET /api/v1.0/get_image_code?image_code_id=62896271964852 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.105 - - [02/Nov/2020 21:55:31] "GET /api/v1.0/get_image_code?image_code_id=11214768329603 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.105 - - [02/Nov/2020 21:55:41] "GET /api/v1.0/sms_codes?image_code_id=11214768329603&image_code=9kix&mobile=18122222222 HTTP/1.1" 200 -
+INFO csrf.py:251 The CSRF session token is missing.
+INFO _internal.py:87 192.168.0.105 - - [02/Nov/2020 21:56:48] "POST /api/v1.0/register HTTP/1.1" 400 -
+INFO _internal.py:87 192.168.0.105 - - [02/Nov/2020 22:07:00] "GET /api/v1.0/get_image_code?image_code_id=17052965417216 HTTP/1.1" 200 -
+INFO _internal.py:87  * Detected change in '/home/focusdroid/flask/ihome_python004/ihome/api_1_0/verify_code.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87  * Detected change in '/home/focusdroid/flask/ihome_python004/ihome/api_1_0/verify_code.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87  * Detected change in '/home/focusdroid/flask/ihome_python004/ihome/api_1_0/verify_code.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87  * Detected change in '/home/focusdroid/flask/ihome_python004/ihome/api_1_0/verify_code.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87  * Running on http://192.168.0.108:5000/ (Press CTRL+C to quit)
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87 192.168.0.105 - - [02/Nov/2020 22:11:49] "GET /api/v1.0/get_image_code?image_code_id=85479444284315 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.105 - - [02/Nov/2020 22:12:21] "GET /api/v1.0/sms_codes?image_code_id=85479444284315&image_code=el5f&mobile=15333333333 HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.105 - - [02/Nov/2020 22:12:59] "POST /api/v1.0/register HTTP/1.1" 200 -
