@@ -6,7 +6,7 @@ from ihome import redis_store, constants, db
 from flask import current_app, jsonify, make_response, request
 from ihome.modules import User
 from ihome.yuntongxun.sms import CCP
-from flask_wtf import csrf
+
 import random
 
 
@@ -18,8 +18,7 @@ def get_image_code():
     :return:　正常：验证码图片　　异常：返回json
     """
 
-    #　创建一个csrf值
-    csrf_token = csrf.generate_csrf()
+
 
     # 获取参数
     # 检验参数
@@ -45,9 +44,6 @@ def get_image_code():
     resp = make_response(image_data)
 
     resp.headers["Content-Type"] = "image/jpg"
-
-    # 使用 make_response　设置 ｃｏｏｋｉｅ值
-    resp.set_cookie("csrf_token", csrf_token)
     return resp
 
 

@@ -1,12 +1,25 @@
 # -*- coding:utf-8 -*-
 from . import api
-from flask import request, current_app, jsonify, session
+from flask import request, current_app, jsonify, session, make_response
 from ihome.utils.response_code import RET
-from ihome import redis_store, db
+from ihome import redis_store, db, constants
 from ihome.modules import User
 from sqlalchemy.exc import IntegrityError
 import re
+from flask_wtf import csrf
 
+@api.route("/get_csrf_token")
+def get_csrf_token():
+    """
+    获取csrf_token
+    :return:
+    """
+    # 　创建一个csrf值
+    csrf_token = csrf.generate_csrf()
+    # 使用 make_response　设置 ｃｏｏｋｉｅ值
+    resp = make_response(csrf_token)
+    resp.set_cookie("csrf_token", csrf_token)
+    return resp
 
 @api.route("/register", methods=["POST"])
 def register():
@@ -93,6 +106,66 @@ def register():
     session["user_id"] = user.id
     # 返回结果
     return jsonify(errno=RET.OK, errmsg="注册成功")
+
+
+@api.route("/login", methods=["POST"])
+def login():
+    """
+    用户登录
+    参数　手机号　　密码
+    格式　json
+    :return:
+    """
+    # 获取参数
+    req_dict = request.get_json()
+    mobile = req_dict.get("mobile")
+    password = req_dict.get("password")
+    # 检验参数
+    # 参数完整性
+    if not all ([mobile, password]):
+        return jsonify(errno=RET.PARAERR, errmsg="参数不完整")
+    # 手机号格式
+    if not re.match(r"1[3456789]\d{9}", mobile):
+        return jsonify(errno=RET.PARAERR, errmsg="手机号码格式错误")
+
+    # 超过一定时间禁止继续登录
+    # redis: acess_nums_请求ＩＰ
+    user_ip = request.remote_addr # 用户ip
+    try:
+        access_nums = redis_store.get("access_num_%s" % user_ip)
+    except Exception as e:
+        current_app.logger.error(e)
+    else:
+        if access_nums is not None and int(access_nums) >= constants.LOGIN_ERROR_MAX_TIMES:
+            return jsonify(error=RET.REQERR, errmsg="错误次数太多，请稍后再试")
+    # 从数据库中根据手机号查询用户的数据对象
+
+    try:
+        user = User.query.filter_by(mobile=mobile).first()
+    except Exception as e:
+        current_app.logger_app(e);
+        
+        return jsonify(error=RET.DBERR, errmsg="获取用户信息失败")
+
+    # 用数据库的密码与用户填写的密码进行对比验证
+    if user is None or not user.check_password(password):
+        # 如果验证失败，记录错误次数，返回信息
+        try:
+            redis_store.incr("access_num_%" % user_ip)
+            redis_store.expire("access_num_%" % user_ip, constants.LOGIN_ERROR_DORBID_TIME)
+        except Exception as e:
+            current_app.logger.error(e)
+            # return jsonify(error=RET.DATAERR, errmsg="用户名或密码错误")
+
+
+    # 如果验证相同，成功保存登录状态，在session中
+    session["name"] = user.name
+    session["mobile"] = user.mobile
+    session["user_ip"] = user_ip
+    #　如果验证失败，记录错误次数，返回信息
+    obj = {"errno": RET.OK, "errmsg":"登陆成功"}
+    return jsonify(obj)
+    #
 
 
 

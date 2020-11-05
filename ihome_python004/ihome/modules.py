@@ -2,7 +2,7 @@
 from datetime import datetime
 from . import db
 from ihome import constants
-from werkzeug.security import generate_password_hash
+from werkzeug.security import generate_password_hash, check_password_hash
 
 class BaseModel(object):
     """模型基类"""
@@ -22,6 +22,15 @@ class User(BaseModel,db.Model):
     avatar_url=db.Column(db.String(128)) # 用户头像路径
     houses=db.relationship('House',backref='user',lazy='dynamic') # 用户发布的房屋
     orders=db.relationship('Order',backref='user',lazy='dynamic') # 用户下的订单
+
+    def check_password(self, password):
+        """
+        检验密码正确性
+        :param password: 用户登录的密码信息
+        :return: 如果正确返回Truem 否则返回Flase
+        """
+        return check_password_hash(self.password, password)
+
 
     # # 加上property装饰器后，会把函数变为属性，属性名即为函数名 ***密码进行加密时候出现问题　RuntimeError: maximum recursion depth exceeded　超过最大递归深度***
     # @property

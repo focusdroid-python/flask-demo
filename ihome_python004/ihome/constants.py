@@ -41,3 +41,4 @@ HOUSE_LIST_PAGE_REDIS_CACHE_EXPIRES = 7200
 
 # 支付地址的网关前缀（支付地址域名）
 ALIPAY_URL_PREFIX = "https://openapi.alipaydev.com/gateway.do"
+

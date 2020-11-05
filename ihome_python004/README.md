@@ -233,3 +233,7 @@ url: /api/v1.0.image_codes/<image_code_id>
     示例：
     errno=RET.DBERR, errmsg="保存图片验证码信息失败"
 
+### redis命令使用文档
+```
+http://redisdoc.com/index.html
+```
