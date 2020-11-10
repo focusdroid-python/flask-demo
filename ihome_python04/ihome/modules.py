@@ -2,7 +2,7 @@
 from datetime import datetime
 from . import db
 import constants
-from werkzeug.security import generate_password_hash,check_password_hash
+from werkzeug.security import generate_password_hash, check_password_hash
 
 class BaseModel(object):
     """模型基类"""
@@ -59,7 +59,7 @@ class User(BaseModel,db.Model):
         # 生成hash密码
         self.password=generate_password_hash(value)
 
-    def check_password(self,password):
+    def check_password(self, password):
         # 校验密码是否正确
         return check_password_hash(self.password, password)
 
