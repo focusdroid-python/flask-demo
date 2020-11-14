@@ -237,3 +237,15 @@ url: /api/v1.0.image_codes/<image_code_id>
 ```
 http://redisdoc.com/index.html
 ```
+
+3. 图片服务
+> 1. 保存到程序本地
+> 1. 备份的问题
+> 1. 多机存储问题
+>
+>
+>
+### 文件存储解决方案
+> 1. 自己搭建文件存储系统 FastDFS 快速分布式文件存储系统, HDFS Hadoop分布式文件系统
+> 1. 选择第三方 七牛云存储
+> 1. 
