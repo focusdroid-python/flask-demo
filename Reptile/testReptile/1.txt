@@ -1,0 +1,11 @@
+ 
+
+i fy pRSBEA | (PSPS Nala IT eae ASEH IT a , FTES)
+
+cookie
+
+* Cookiet8XFR:
+*  {cookie[‘name’]: cookie[‘value’] for cobkie in driver.get_cookies()}
+*  driver.delete_cookie("CookieName")
+*  driver.delete_all_cookies()
+
