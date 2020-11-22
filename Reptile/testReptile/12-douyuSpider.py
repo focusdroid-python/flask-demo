@@ -1,6 +1,7 @@
 # -*- coding:utf-8 -*-
 from selenium import webdriver
 import time
+import json
 
 class DouyuSpider:
     def __init__(self):
@@ -12,11 +13,11 @@ class DouyuSpider:
         content_list = []
         for li in li_list:
             item = {}
-            # item["room_img"] = li.find_element_by_xpath(".//img[@class='DyImg-content']").get_attribute("src")
             item["room_title"] = li.find_element_by_xpath(".//h3[@class='DyListCover-intro']").get_attribute("title")
-            # item["room_cate"] = li.find_element_by_xpath(".//span[@class='DyListCover-zone']").text
-            # item["anchor_name"] = li.find_element_by_xpath((".//div[@class='DyListCover-userName']")).text
-            # item["watch_num"] = li.find_element_by_xpath(".//span[@class='DyListCover-hot']").text
+            item["room_img"] = li.find_element_by_xpath(".//div[@class='DyListCover-imgWrap']/div/img").get_attribute("src")
+            item["room_cate"] = li.find_element_by_xpath(".//span[@class='DyListCover-zone']").text
+            item["anchor_name"] = li.find_element_by_xpath((".//div[@class='DyListCover-userName']")).text
+            item["watch_num"] = li.find_element_by_xpath(".//span[@class='DyListCover-hot']").text
 
             content_list.append(item)
             # 获取下一页的元素
@@ -30,6 +31,8 @@ class DouyuSpider:
     def save_content_list(self, content_list):
         print(content_list)
         print("*"*100)
+        with open('douban.json', 'w', encoding='utf-8') as f:
+            f.write(json.dumps(content_list, ensure_ascii=False))
 
 
     def run(self):
