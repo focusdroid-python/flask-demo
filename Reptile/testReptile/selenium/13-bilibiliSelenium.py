@@ -28,7 +28,7 @@ class Bli:
 
     def save_contnet_list(self, content_list):
         print(content_list)
-        print("*"*100)
+        print("*"*1000)
         with open("blibliSelenium.json", 'w') as f:
             f.write(json.dumps(content_list, ensure_ascii=False))
 

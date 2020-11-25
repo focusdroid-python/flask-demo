@@ -166,7 +166,7 @@ def login():
     # 如果验证相同，成功保存登录状态，在session中
     session["name"] = user.name
     session["mobile"] = user.mobile
-    session["user_ip"] = user_ip
+    session["user_id"] = user.mobile
     #　如果验证失败，记录错误次数，返回信息
     data = {
         "success":"true",

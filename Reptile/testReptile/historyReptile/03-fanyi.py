@@ -22,7 +22,7 @@ post_url = "https://fanyi.baidu.com/v2transapi?from=en&to=zh"
 
 res = requests.post(post_url, data=data, headers=headers)
 datas = res.content.decode()
-file_path = "../第1页.json"
+file_path = "../selenium/第1页.json"
 with open(file_path, 'w') as f:
     f.write(datas)
 

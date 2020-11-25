@@ -29,7 +29,11 @@ class User(BaseModel,db.Model):
         :param password: 用户登录的密码信息
         :return: 如果正确返回Truem 否则返回Flase
         """
-        return check_password_hash(self.password, password)
+        # return check_password_hash(self.password, password)
+        if self.password == password:
+            return True
+        else:
+            return False
 
 
     # # 加上property装饰器后，会把函数变为属性，属性名即为函数名 ***密码进行加密时候出现问题　RuntimeError: maximum recursion depth exceeded　超过最大递归深度***
