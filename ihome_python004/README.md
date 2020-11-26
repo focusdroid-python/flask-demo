@@ -249,3 +249,11 @@ http://redisdoc.com/index.html
 > 1. 自己搭建文件存储系统 FastDFS 快速分布式文件存储系统, HDFS Hadoop分布式文件系统
 > 1. 选择第三方 七牛云存储
 > 1. 
+### flask后端接收参数
+```python
+    # flask获取参数的方式,
+    # 直接传文件 request.files["参数名"] request.files.get("参数名")
+    # 表单传文件 request.form["参数名"] request.form.get("参数名")
+    # get请求 request.args["参数名"] request.args.get("参数名")
+    # post request.get_json()
+```
