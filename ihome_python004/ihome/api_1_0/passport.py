@@ -149,8 +149,8 @@ def login():
         user = User.query.filter_by(mobile=mobile).first()
         print("-------------------"+user.name+"----------------------")
     except Exception as e:
-        current_app.logger_app(e);
-        return jsonify(error=RET.DBERR, errmsg="获取用户信息失败")
+        current_app.logger.error(e);
+        return jsonify(error=RET.DBERR, errmsg="用户名或密码错误")
 
     # 用数据库的密码与用户填写的密码进行对比验证
     if user is None or not user.check_password(password):
@@ -167,17 +167,21 @@ def login():
     session["name"] = user.name
     session["mobile"] = user.mobile
     session["user_id"] = user.mobile
+    session["user_ip"] = user_ip
     #　如果验证失败，记录错误次数，返回信息
     data = {
         "success":"true",
-        "code":"200"
+        "code":"200",
+        "user":user.name,
+        "mobile":user.mobile,
+        "ip": user_ip
     }
     resp = {"errno": RET.OK, "errmsg": "登陆成功", "data": data}
     resp = jsonify(resp)
     resp.headers['Access-Control-Allow-Headers'] = "content-type"
     resp.headers['Access-Control-Allow-Origin'] = '*'
 
-    # 问题未解决：返回的数据前端拿不到
+
     return resp
     #
 
