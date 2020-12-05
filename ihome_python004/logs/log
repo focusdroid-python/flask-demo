@@ -2796,3 +2796,52 @@ INFO _internal.py:87 192.168.0.100 - - [02/Dec/2020 21:18:50] "POST /api/v1.0/us
 DEBUG connectionpool.py:396 http://up.qiniu.com:80 "POST / HTTP/1.1" 200 76
 INFO _internal.py:87 192.168.0.100 - - [02/Dec/2020 21:18:51] "POST /api/v1.0/users/avatar HTTP/1.1" 200 -
 INFO _internal.py:87 192.168.0.100 - - [02/Dec/2020 21:24:51] "GET /api/v1.0/get_csrf_token HTTP/1.1" 200 -
+INFO _internal.py:87  * Detected change in '/home/focusdroid/flask/ihome_python004/ihome/modules.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87  * Detected change in '/home/focusdroid/flask/ihome_python004/ihome/modules.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87 192.168.0.108 - - [03/Dec/2020 22:13:57] "GET /api/v1.0/areas HTTP/1.1" 404 -
+INFO _internal.py:87 192.168.0.108 - - [03/Dec/2020 22:13:58] "GET /favicon.ico HTTP/1.1" 404 -
+INFO _internal.py:87  * Running on http://192.168.0.108:5000/ (Press CTRL+C to quit)
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87 192.168.0.108 - - [03/Dec/2020 22:14:28] "GET /api/v1.0/areas HTTP/1.1" 404 -
+INFO _internal.py:87  * Running on http://192.168.0.108:5000/ (Press CTRL+C to quit)
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87 192.168.0.108 - - [03/Dec/2020 22:32:59] "GET /api/v1.0/areas HTTP/1.1" 404 -
+INFO _internal.py:87 192.168.0.108 - - [03/Dec/2020 22:33:09] "GET /api/v1.0/areas HTTP/1.1" 404 -
+INFO _internal.py:87  * Running on http://192.168.0.108:5000/ (Press CTRL+C to quit)
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87 192.168.0.108 - - [03/Dec/2020 22:34:05] "GET /api/v1.0/areas HTTP/1.1" 404 -
+INFO _internal.py:87 192.168.0.100 - - [03/Dec/2020 22:34:31] "POST /api/v1.0/users/avatar HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.108 - - [03/Dec/2020 22:34:45] "GET /api/v1.0/areas HTTP/1.1" 404 -
+INFO _internal.py:87 192.168.0.108 - - [03/Dec/2020 22:35:11] "GET /api/v1.0/get_csrf_token HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.108 - - [03/Dec/2020 22:35:31] "GET /api/v1.0/areas HTTP/1.1" 404 -
+INFO _internal.py:87 192.168.0.100 - - [03/Dec/2020 22:37:42] "GET /api/v1.0/get_csrf_token HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.100 - - [03/Dec/2020 22:39:39] "GET /api/v1.0/get_csrf_token HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.100 - - [03/Dec/2020 22:39:39] "GET /api/v1.0/areas HTTP/1.1" 404 -
+INFO _internal.py:87 192.168.0.100 - - [03/Dec/2020 22:39:44] "GET /api/v1.0/get_csrf_token HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.100 - - [03/Dec/2020 22:39:45] "GET /api/v1.0/areas HTTP/1.1" 404 -
+INFO _internal.py:87  * Detected change in '/home/focusdroid/flask/ihome_python004/ihome/api_1_0/__init__.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87  * Running on http://192.168.0.108:5000/ (Press CTRL+C to quit)
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87 192.168.0.100 - - [03/Dec/2020 22:40:15] "GET /api/v1.0/get_csrf_token HTTP/1.1" 200 -
+INFO _internal.py:87 192.168.0.100 - - [03/Dec/2020 22:40:15] "GET /api/v1.0/areas HTTP/1.1" 200 -
+INFO _internal.py:87  * Running on http://192.168.0.108:5000/ (Press CTRL+C to quit)
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
