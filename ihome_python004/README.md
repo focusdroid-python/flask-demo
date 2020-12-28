@@ -257,3 +257,7 @@ http://redisdoc.com/index.html
     # get请求 request.args["参数名"] request.args.get("参数名")
     # post request.get_json()
 ```
+### redis mysql 
+```
+
+```
