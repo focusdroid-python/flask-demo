@@ -29,6 +29,9 @@ pip install Scrapy
     scrapy genspider itcast 'itcast.cn'
   
   # 启动爬虫
+  scrapy crawl itcast
+  scrapy crawl 爬虫名称
+  
   focusdroid@focusdroid:~/flask/scrapy/mySpider$ scrapy crawl itcast
   focusdroid@focusdroid:~/flask/scrapy/mySpider$ scrapy crawl 爬虫名称
     
@@ -90,6 +93,14 @@ if __name__ == '__main__':
     logger.info('this is a info log1')
 
 
+```
+#### scrapy.Request知识点
+```
+scrapy.Request(url, [callback, method='GET', headers, body, cookies, meta, dont_filter=False])
+注： 一般文档中方括号中的参数表示可选参数
+callback： 指定传入的url交给那个解析函数去处理
+meta：实现在不同解析函数之间解析数据的，meta默认会携带部分信息，比如下载延迟，请求深度等
+dont_filter： 让scrapy的去重不会过滤当前url，scrapy默认有url去重的功能，对需要的重复请求的url有重要用途
 ```
 
 
