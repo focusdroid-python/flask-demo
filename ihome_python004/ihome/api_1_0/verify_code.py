@@ -210,7 +210,9 @@ def get_sms_code():
         return jsonify(errno=RET.DBERR, errmsg="保存短信验证码异常")
     # 发送短信
     # 使用celery一步发送短信
-    send_sms.delay(mobile, [sms_code, int(constants.SMS_CODE_REDIS_EXPIRES/60)], 1)
+    result = send_sms.delay(mobile, [sms_code, int(constants.SMS_CODE_REDIS_EXPIRES/60)], 1)
+    print(result) # 返回的标记
+    print(result.get()) # 返回值
 
     return jsonify(errno=RET.OK, errmsg="发送短信成功")
     # 1. 返回值

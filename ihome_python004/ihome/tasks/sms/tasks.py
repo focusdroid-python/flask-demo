@@ -7,6 +7,7 @@ from ihome.yuntongxun.sms import CCP
 def send_sms(to, datas, temp_id):
     """发送短信的异步任务
     celery -A ihome.tasks.task_sms worker -l info
+    可以把发送短信的模块和异步任务单独独立出来也是可以使用的
     """
     ccp = CCP()
-    ccp.send_template_sms(to, datas, temp_id)
+    return ccp.send_template_sms(to, datas, temp_id)
