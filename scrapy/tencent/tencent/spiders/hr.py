@@ -1,5 +1,6 @@
 import scrapy
 import json
+from tencent.items import TencentItem
 
 
 class HrSpider(scrapy.Spider):
@@ -17,7 +18,7 @@ class HrSpider(scrapy.Spider):
             content = json.loads(response.body.decode())
             jobs = content["Data"]["Posts"]
             for job in jobs:
-                item = {}
+                item = TencentItem()
                 item['CategoryName'] = job['CategoryName']
                 item['LastUpdateTime'] = job['LastUpdateTime']
                 item['PostURL'] = job['PostURL']
@@ -26,6 +27,17 @@ class HrSpider(scrapy.Spider):
                 item['RecruitPostName'] = job['RecruitPostName']
                 item['BGName'] = job['BGName']
                 yield item
+
+            # for job in jobs:
+            #     item = {}
+            #     item['CategoryName'] = job['CategoryName']
+            #     item['LastUpdateTime'] = job['LastUpdateTime']
+            #     item['PostURL'] = job['PostURL']
+            #     item['CountryName'] = job['CountryName']
+            #     item['LocationName'] = job['LocationName']
+            #     item['RecruitPostName'] = job['RecruitPostName']
+            #     item['BGName'] = job['BGName']
+            #     yield item
 
             # 页码设置
             self.set_pageIndex += 1

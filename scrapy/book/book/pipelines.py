@@ -6,15 +6,8 @@
 
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
-from pymongo import MongoClient
-from tencent.items import TencentItem
 
-client = MongoClient()
-collection = client['tencent']['hr']
 
-class TencentPipeline:
+class BookPipeline:
     def process_item(self, item, spider):
-        if isinstance(item, TencentItem):
-            print(item)
-            collection.insert(dict(item))
-            return item
+        return item

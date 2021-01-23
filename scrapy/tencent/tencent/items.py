@@ -9,4 +9,10 @@ import scrapy
 class TencentItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    pass
+    CategoryName = scrapy.Field()
+    LastUpdateTime = scrapy.Field()
+    PostURL = scrapy.Field()
+    CountryName = scrapy.Field()
+    LocationName = scrapy.Field()
+    RecruitPostName = scrapy.Field()
+    BGName = scrapy.Field()
