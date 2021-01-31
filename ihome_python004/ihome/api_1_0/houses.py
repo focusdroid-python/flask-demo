@@ -215,9 +215,50 @@ def save_house_image():
 
     return jsonify(error=RET.OK, errmsg="保存成功", data={"img_url": img_url})
 
+@api.route("/user.houses", methods=["GET"])
+@login_required
+def get_user_houses():
+    """获取房东发布的房源信息"""
+    user_id = g.user_id
+
+    try:
+        user = User.query.get(user_id)
+        houses = user.houses
+    except Exception as e:
+        current_app.logging.error(e)
+        return jsonify(errno=RET.DBERR, errmsg="获取数据失败")
+
+    # 将查询到的房屋信息转换为字典存放在列表中
+    houses_list = []
+    if houses:
+        for house in houses:
+            houses_list.append(house.to_basic_dict())
+    return jsonify(errno=RET.OK, errmsg="ok", data={"houses": houses_list})
 
 
 
+def get_house_index():
+    """获取主页幻灯片展示的房屋信息"""
+    # 冲缓存中尝试获取数据
+    try:
+        ret = redis_store.get("home_page_data")
+    except Exception as e:
+        current_app.logging.error(e)
+        ret = None
+
+    if ret:
+        current_app.logging.info("hit house index info redis")
+        return "{'errno':0, 'errmsg':'ok', 'data':'%s'}" % ret, 200, {"Content-Type":"application/json"}
+    else:
+        try:
+            # 查询数据库，返回房屋订单数目最多的5条数据
+            houses = House.query.order_by(House.order_count.desc()).limit(constants.HOME_PAGE_MAX_HOUSES)
+        except Exception as e:
+            current_app.logging.error(e)
+            return jsonify(errno=RET.DBERR, errmsg="查询数据失败")
+
+        # if not houses:
+            
 
 
 

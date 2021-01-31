@@ -102,9 +102,81 @@ callback： 指定传入的url交给那个解析函数去处理
 meta：实现在不同解析函数之间解析数据的，meta默认会携带部分信息，比如下载延迟，请求深度等
 dont_filter： 让scrapy的去重不会过滤当前url，scrapy默认有url去重的功能，对需要的重复请求的url有重要用途
 ```
+#### scrapy中的CrawlSpider
+- 常见爬虫 scrapy genspiden -t crawl 爬虫名 allow_domain
+- 常见的start_url，对应的响应会进过rules提取url地址
+- 完善rules，添加Rule`Rule(LinkExtractor(allow=r'Items/'), callback='parse_item', follow=True)`
+- 注意点：
+    - url地址不完整，crawlspider会自动补充完章之后再请求
+    - parse函数不能定义，他有特殊的功能需要实现
+    - callback：连接提取器提取出来的url地址对应的响应交给他处理
+    - follow：连接提取器提取出来的url地址对用的url响应是否继续被rules来过滤
+
+```
+生成crawlspider的命令：
+    scrapy genspider -t craw csdn "csdn.cn"
+```
+
+### scrapy模拟登陆
+- 1. 直接携带cookie（settings.py直接用）
+- 2. 找到发送post请求的url地址，带上信息，发送请求
+  
+- scrapy模拟登陆值携带cookie
+  - 应用场景：
+    - 1. cookie过期时间很长，常见于一些不规范的网站
+    - 2. 能在cookie过期之前把所有的数据拿到
+    - 3. 配合其他程序使用比如使用selenium把登录之后的cookie获取到保存到本地，
+         scrapy发送请求之前先读取本地cookie
+
+### scrapy中使用cookies
+```python
+import scrapy
+import re
+class RenrenSpider(scrapy.Spider):
+    name = 'renren'
+    allowed_domains = ['renren.com']
+    start_urls = ['http://www.renren.com/974361808/profile']
 
 
+    def start_requests(self):
+        cookies = "anonymid=k9s0c65y2om8pj; _r01_=1; taihe_bi_sdk_uid=dc98311ffc7de226cb1f79afdd705b6f; jebe_key=bf8a72df-0519-4da7-b1df-362082dfd8d0%7C92e70cb2bde7172939cddc8f15fdd3b4%7C1588663804895%7C1%7C1588663805116; ick_login=c4088f0e-05b4-45aa-bdf0-9b08f1473ad5; taihe_bi_sdk_session=02916b8090c4c5873f420e06488a9481; ick=2cb82a29-88ff-4992-af3c-666c7117e519; __utmc=151146938; __utmz=151146938.1598678110.1.1.utmcsr=renren.com|utmccn=(referral)|utmcmd=referral|utmcct=/; first_login_flag=1; wpsid=15883893825150; __utma=151146938.1079666667.1598678110.1598678110.1598690302.2; _de=D5FD513C20B9124F1FF9E00605E6865D; _ga=GA1.2.1079666667.1598678110; depovince=GW; jebecookies=9732a44a-efa5-4faf-8686-e74c8b388e0a|||||; p=eda31466730955aa5025a3e80268615f8; ln_uact=15701229789; ln_hurl=http://head.xiaonei.com/photos/0/0/men_main.gif; t=2c81d9d01c4857e6bd01807353ee3a3e8; societyguester=2c81d9d01c4857e6bd01807353ee3a3e8; id=974361808; xnsid=a9818e26; ver=7.0; loginfrom=null; wp_fold=0"
+        cookies = {i.split("=")[0]:i.split("=")[1] for i in  cookies.split('; ')}
 
+        yield scrapy.Request(
+            self.start_urls[0],
+            callback=self.parse,
+            cookies=cookies
+        )
+
+    def parse(self, response):
+        print(re.findall("王维", response.body.decode()))
+        yield scrapy.Request(
+            "http://www.renren.com/974361808/profile?v=info_timeline",
+            callback=self.parse_detail
+        )
+
+    def parse_detail(self, response):
+        print(re.findall("王维", response.body.decode()))
+
+```
+
+### 下载中间件
+- 使用方法
+  - 编写一个DOenloader Middlewares和我们编写一个pipeline一样，定义一个类，然后在setting中开启
+  
+- Downliader Middlewares默认的方法
+    - process_request(self, request, spider)
+      - 当每个request通过下载中间件时，该方法被调用
+    - process_response(self, request, response, spider):
+      - 当下在器完成http请求，传递响应给引擎的时候调用
+  
+- 在settings中放开配置
+```python
+DOWNLOADER_MIDDLEWARES = {
+   'login.middlewares.LoginDownloaderMiddleware': 543,
+}
+
+```
 
 
 
