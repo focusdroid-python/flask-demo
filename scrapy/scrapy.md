@@ -169,6 +169,29 @@ class RenrenSpider(scrapy.Spider):
       - 当每个request通过下载中间件时，该方法被调用
     - process_response(self, request, response, spider):
       - 当下在器完成http请求，传递响应给引擎的时候调用
+    
+```python
+import random
+class RandomUserAgentMiddleware:
+    def process_request(self, request, spider):
+        ua = random.choice(spider.settings.get("USER_AGENTS_LISTS"))
+        request.headers["User-Agent"] = ua
+#         添加自定义的UA，给request的headers赋值即可
+
+
+class CheckUserAgent:
+    def process_response(self, request, response, spider):
+        print(dir(response))
+        print(request.header["User-Agent"])
+
+class ProxyMiddleware:
+    def process_reqiuest(self, request,spider):
+        request.meta["proxy"] = "http://124.115.126.14:808"
+#           添加代理，需要在request的meta信息中添加proxy字段         
+#           代理的形式为：协议+ip地址+端口
+
+
+```
   
 - 在settings中放开配置
 ```python

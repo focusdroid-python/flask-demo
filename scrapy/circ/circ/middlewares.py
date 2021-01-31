@@ -7,7 +7,7 @@ from scrapy import signals
 
 # useful for handling different item types with a single interface
 from itemadapter import is_item, ItemAdapter
-
+import random
 
 class CircSpiderMiddleware:
     # Not all methods need to be defined. If a method is not defined,
@@ -101,3 +101,14 @@ class CircDownloaderMiddleware:
 
     def spider_opened(self, spider):
         spider.logger.info('Spider opened: %s' % spider.name)
+
+class RandomUserAgentMiddleware:
+    def process_request(self, request, spider):
+        ua = random.choice(spider.settings.get("USER_AGENTS_LISTS"))
+        request.headers["User-Agent"] = ua
+
+
+class CheckUserAgent:
+    def process_response(self, request, response, spider):
+        print(dir(response))
+        print(request.header["User-Agent"])
