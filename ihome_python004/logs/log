@@ -3527,3 +3527,28 @@ INFO _internal.py:87 192.168.0.103 - - [28/Jan/2021 22:46:20] "GET /api/v1.0/get
 ERROR passport.py:140 incomplete format
 INFO passport.py:147 开始登录查询用户信息
 INFO _internal.py:87 192.168.0.103 - - [28/Jan/2021 22:46:50] "POST /api/v1.0/login HTTP/1.1" 200 -
+INFO _internal.py:87  * Running on http://192.168.0.108:5000/ (Press CTRL+C to quit)
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87 192.168.0.103 - - [06/Feb/2021 18:22:46] "GET /api/v1.0/get_csrf_token HTTP/1.1" 200 -
+ERROR passport.py:140 incomplete format
+INFO passport.py:147 开始登录查询用户信息
+INFO _internal.py:87 192.168.0.103 - - [06/Feb/2021 18:23:12] "POST /api/v1.0/login HTTP/1.1" 200 -
+INFO _internal.py:87  * Detected change in '/home/focusdroid/flask/ihome_python004/ihome/api_1_0/houses.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+INFO _internal.py:87  * Detected change in '/home/focusdroid/flask/ihome_python004/ihome/api_1_0/houses.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 140-095-645
+DEBUG connectionpool.py:824 Starting new HTTPS connection (1): uc.qbox.me
+DEBUG connectionpool.py:396 https://uc.qbox.me:443 "GET /v1/query?ak=reZVGERsw2iRU5NwhkXyOf5ZSV4_rRhj-z-9sbGZ&bucket=ihome-python004 HTTP/1.1" 200 486
+DEBUG retry.py:200 Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+DEBUG connectionpool.py:208 Starting new HTTP connection (1): up.qiniu.com
+DEBUG connectionpool.py:396 http://up.qiniu.com:80 "POST / HTTP/1.1" 200 76
+INFO _internal.py:87 192.168.0.103 - - [06/Feb/2021 18:47:46] "POST /api/v1.0/users/avatar HTTP/1.1" 200 -
+DEBUG connectionpool.py:243 Resetting dropped connection: up.qiniu.com
+DEBUG connectionpool.py:396 http://up.qiniu.com:80 "POST / HTTP/1.1" 200 76
+INFO _internal.py:87 192.168.0.103 - - [06/Feb/2021 18:55:19] "POST /api/v1.0/users/avatar HTTP/1.1" 200 -
