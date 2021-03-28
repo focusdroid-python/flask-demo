@@ -101,19 +101,3 @@ class YangguangDownloaderMiddleware:
 
     def spider_opened(self, spider):
         spider.logger.info('Spider opened: %s' % spider.name)
-
-
-import requests
-
-
-class ProxyMiddleware(object):
-
-    def process_request(self, request, spider):
-        APIKEY = 'f95f08afc952c034cc2ff9c5548d51be'
-        url = 'https://www.proxicity.io/api/v1/{}/proxy'.format(APIKEY)  # 在线API接口
-        r = requests.get(url)
-
-        request.meta['proxy'] = r.json()['curl']  # 协议://IP地址:端口（如 http://5.39.85.100:30059）
-
-        return request
-

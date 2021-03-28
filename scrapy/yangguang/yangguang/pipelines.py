@@ -7,13 +7,12 @@
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
 import re
-from pymongo import MongoClient
 
 class YangguangPipeline:
     def open_spider(self, spider):
-        # spider.hello = 'world'
-        client = MongoClient()
-        self.collention = client["test"]["test"]
+        # client =
+        spider.hello = 'world'
+
 
     def process_item(self, item, spider):
         item['content'] = self.process_content(item['content'])
@@ -21,8 +20,8 @@ class YangguangPipeline:
         return item
 
     def process_content(self, content):
-        # 清洗数据
-        content = [re.sub(r"\n|\s",'',i) for i in content]
-        content = [i for i in content if len(i) > 0] # q去除列表中的空字符串
-        return content
 
+        content = [re.sub(r'\n|\r|\s', '', i) for i in content]
+
+        content = [i for i in content if len(i) > 0] # 去除列表中的空字符串
+        return content

@@ -12,25 +12,22 @@ BOT_NAME = 'yangguang'
 SPIDER_MODULES = ['yangguang.spiders']
 NEWSPIDER_MODULE = 'yangguang.spiders'
 
-MONGO_HOSTY = 'localhost'
-
-LOG_LEVEL='WARNING'
+# LOG_LEVEL='WARNING'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-# USER_AGENT = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36'
-USER_AGENT = 'Mozzila 1.0'
+USER_AGENT = 'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-#CONCURRENT_REQUESTS = 32 # 最大并发请求
+#CONCURRENT_REQUESTS = 32
 
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-#DOWNLOAD_DELAY = 3 # 下载延迟
+DOWNLOAD_DELAY = 3
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
@@ -54,11 +51,10 @@ ROBOTSTXT_OBEY = True
 #}
 
 # Enable or disable downloader middlewares
-# # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
-# DOWNLOADER_MIDDLEWARES = {
-#    'yangguang.middlewares.ProxyMiddleware': 100,    # 注意修改 project_name
+# See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
+#DOWNLOADER_MIDDLEWARES = {
 #    'yangguang.middlewares.YangguangDownloaderMiddleware': 543,
-# }
+#}
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="253c3f7a-db69-4d82-8e13-25d1192016ac" name="myspider" url="http://192.168.1.6">
+        <fileTransfer accessType="SFTP" port="22" sshConfigId="d6a3605e-c21c-4e59-a87c-16f53c922451" sshConfig="myspider">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

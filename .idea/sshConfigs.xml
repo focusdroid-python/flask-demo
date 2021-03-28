@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" id="d6a3605e-c21c-4e59-a87c-16f53c922451" port="22" customName="myspider" nameFormat="CUSTOM">
+        <option name="customName" value="myspider" />
+      </sshConfig>
+    </configs>
+  </component>
+</project>
